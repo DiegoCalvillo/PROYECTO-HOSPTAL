@@ -34,10 +34,18 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
-          <a class="nav-link" href="">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-users"></i>
             <span class="nav-link-text">Usuarios</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseUsers">
+            <li>
+              <a href="">Usuarios</a>
+            </li>
+            <li>
+              <a href="">Alta de Usuarios</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
@@ -46,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="/tables">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Tables</span>
           </a>
@@ -228,6 +236,7 @@
     </div>
   </nav>
   @yield('content_inicio')
+  @yield('content_tables')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">

@@ -10,4 +10,9 @@ class PrincipalController extends Controller
     {
     	return view('inicio');
     }
+
+    public function tables()
+    {
+    	return view('tables');
+    }
 }

@@ -16,4 +16,5 @@
 });*/
 
 Route::resource('/', 'PrincipalController');
+Route::get('/tables', 'PrincipalController@tables');
 
