@@ -40,10 +40,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseUsers">
             <li>
-              <a href="">Usuarios</a>
+              <a href="http://192.168.1.66:8080/usuarios">Usuarios</a>
             </li>
             <li>
-              <a href="">Alta de Usuarios</a>
+              <a href="">Tipos de Usuario</a>
             </li>
           </ul>
         </li>
@@ -237,6 +237,8 @@
   </nav>
   @yield('content_inicio')
   @yield('content_tables')
+  <!-- Usuarios -->
+  @yield('content_usuarios')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">

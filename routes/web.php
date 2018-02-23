@@ -15,6 +15,10 @@
     return view('welcome');
 });*/
 
+/*Rutas de PrincipalController*/
 Route::resource('/', 'PrincipalController');
 Route::get('/tables', 'PrincipalController@tables');
+
+/*Rutas de UsuariosController*/
+Route::resource('/usuarios', 'UsuariosController');
 
