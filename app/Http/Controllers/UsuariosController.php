@@ -12,4 +12,9 @@ class UsuariosController extends Controller
     	$users = User::all();
     	return view('usuarios.usuarios')->with('users', $users);
     }
+
+    public function create()
+    {
+    	return view('usuarios.usuarios_registro');
+    }
 }

@@ -10,7 +10,7 @@
 			<li class="breadcrumb-item active">Usuarios</li>
 		</ol>
 		<div class="row">
-			<div class="col-12">
+			<div class="col-6">
 				<h1>Usuarios</h1>
 			</div>
 		</div>
@@ -39,6 +39,9 @@
 							@endforeach
 						</tbody>
 					</table>
+					<div class="col-4">
+						<a class="btn btn-primary btn-block" href="usuarios/create">Crear Nuevo</a>
+					</div>
 				</div>
 			</div>
 		</div>

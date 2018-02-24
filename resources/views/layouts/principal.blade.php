@@ -8,14 +8,18 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Sistema Hospital</title>
-  <!-- Bootstrap core CSS-->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <!-- Bootstrap core CSS
+  <link href="css/bootstrap.min.css" rel="stylesheet">-->
+  {!! Html::style('css/bootstrap.min.css') !!}
+  <!-- Custom fonts for this template
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+  {!! Html::style('vendor/font-awesome/css/font-awesome.min.css') !!}
+  <!-- Page level plugin CSS-
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">-->
+  {!! Html::style('vendor/datatables/dataTables.bootstrap4.css') !!}
+  <!-- Custom styles for this template
+  <link href="css/sb-admin.css" rel="stylesheet">-->
+  {!! Html::style('css/sb-admin.css') !!}
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -239,6 +243,7 @@
   @yield('content_tables')
   <!-- Usuarios -->
   @yield('content_usuarios')
+  @yield('content_usuarios_registro')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
@@ -268,20 +273,29 @@
         </div>
       </div>
     </div>
-    <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Page level plugin JavaScript-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    {!! Html::script('vendor/jquery/jquery.min.js') !!}
+    {!! Html::script('vendor/bootstrap/js/bootstrap.bundle.min.js') !!}
+    <!-- Core plugin JavaScript
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
+    {!! Html::script('vendor/jquery-easing/jquery.easing.min.js') !!}
+    <!-- Page level plugin JavaScript
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>-->
+    {!! Html::script('vendor/chart.js/Chart.min.js') !!}
+    {!! Html::script('vendor/datatables/jquery.dataTables.js') !!}
+    {!! Html::script('vendor/datatables/dataTables.bootstrap4.js') !!}
+    <!-- Custom scripts for all pages
+    <script src="js/sb-admin.min.js"></script>-->
+    {!! Html::script('js/sb-admin.min.js') !!}
+    <!-- Custom scripts for this page
     <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.min.js"></script>
+    <script src="js/sb-admin-charts.min.js"></script>-->
+    {!! Html::script('js/sb-admin-datatables.min.js') !!}
+    {!! Html::script('js/sb-admin-charts.min.js') !!}
 </body>
 
 </html>
