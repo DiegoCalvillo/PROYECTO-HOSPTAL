@@ -33,7 +33,7 @@
 							@foreach($users as $users)
 								<tr>
 									<td>{{ $users->username }}</td>
-									<td>{{ $users->name }}</td>
+									<td>{{ $users->name }} {{ $users->ap_paterno }} {{ $users->ap_materno }}</td>
 									<td></td>
 								</tr>
 							@endforeach
