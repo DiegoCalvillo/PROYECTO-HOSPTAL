@@ -23,27 +23,29 @@
 						<div class="form-group">
 							<div class="form-row">
 								<div class="col-md-4">
-									<label for="exampleInputName">Nombre</label>
-									<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" name="name" placeholder="Nombre">
+									<!--<label for="exampleInputName">Nombre</label>-->
+									{!! Form::label('full_name', 'Nombre') !!}
+									<!--<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" name="name" placeholder="Nombre">-->
+									{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre']) !!}
 								</div>
 								<div class="col-md-4">
-									<label for="exampleInputName">Primer Apellido</label>
-									<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" name="ap_paterno" placeholder="Apellido paterno">
+									{!! Form::label('full_name', 'Primer Apellido') !!}
+									{!! Form::text('ap_paterno', null, ['class' => 'form-control', 'placeholder' => 'Apellido paterno']) !!}
 								</div>
 								<div class="col-md-4">
-									<label for="exampleInputName">Segundo Apellido</label>
-									<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" name="ap_materno" placeholder="Apellido materno">
+									{!! Form::label('full_name', 'Segundo Apellido') !!}
+									{!! Form::text('ap_materno', null, ['class' => 'form-control', 'placeholder' => 'Apellido materno']) !!}
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="form-row">
 								<div class="col-md-12">
-									<label for="exampleInputName">Correo electrónico</label>
-									<input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+									{!! Form::label('full_name', 'Correo electrónico') !!}
+									{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Ej. usuario@gmail.com']) !!}
 								</div>
 								<div class="col-md-6">
-									<label for="exampleInputName">Tipo de Usuario</label>
+									{!! Form::label('full_name', 'Tipo de Usuario') !!}
 									<select class="form-control" name="tipo_usuario">
 										<option value="">Seleccione</option>
 										<?php foreach($tipo_usuario as $tipo_usuario){
@@ -52,7 +54,7 @@
 									</select>
 								</div>
 								<div class="col-md-6">
-									<label for="exampleInputName">Estatus del Usuario</label>
+									{!! Form::label('full_name', 'Estatus del Usuario') !!}
 									<select class="form-control" name="estatus_usuario">
 										<option value="">Seleccione</option>
 										<?php foreach($estatus_usuario as $estatus_usuario){
@@ -70,8 +72,8 @@
 						<div class="form-group">
 							<div class="form-row">
 								<div class="col-md-12">
-									<label for="exampleInputName">Nombre de usuario</label>
-									<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" name="username" placeholder="Nombre de Usuario">
+									{!! Form::label('full_name', 'Nombre de Usuario') !!}
+									{!! Form::text('username', null, ['class' => 'form-control', 'placeholder' => 'Nombre de Usuario']) !!}
 								</div>
 								<div class="col-md-6">
 									<label for="exampleInputName">Contraseña</label>
