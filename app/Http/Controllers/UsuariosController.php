@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Hospital\User as User;
 use Hospital\TipoUsuario as TipoUsuario;
 use Hospital\EstatusUsuario as EstatusUsuario;
+use Hospital\Http\Requests\UsuariosRegistroRequest;
 
 class UsuariosController extends Controller
 {
@@ -22,7 +23,7 @@ class UsuariosController extends Controller
     	return view('usuarios.usuarios_registro')->with('tipo_usuario', $tipo_usuario)->with('estatus_usuario', $estatus_usuario);
     }
 
-    public function store(Request $request)
+    public function store(UsuariosRegistroRequest $request)
     {
     	$users = new User;
     	$users->name = $request->name;

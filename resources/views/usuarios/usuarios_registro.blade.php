@@ -12,6 +12,7 @@
 			</li>
 			<li class="breadcrumb-item active">Registro de Usuarios</li>
 		</ol>
+		@include('alerts.request')
 		<div class="container">
 			<form method="POST" action="http://192.168.1.66:8080/usuarios/store">
 				<div class="card card-register mx-auto mt-5">
@@ -78,7 +79,7 @@
 								</div>
 								<div class="col-md-6">
 									<label for="exampleInputName">Confirmar Contraseña</label>
-									<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password2">
+									<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password_confirmation">
 								</div>
 							</div>
 						</div>
