@@ -47,7 +47,7 @@
               <a href="http://192.168.1.66:8080/usuarios">Usuarios</a>
             </li>
             <li>
-              <a href="">Tipos de Usuario</a>
+              <a href="http://192.168.1.66:8080/tipo_usuarios">Tipos de Usuario</a>
             </li>
           </ul>
         </li>
@@ -244,6 +244,8 @@
   <!-- Usuarios -->
   @yield('content_usuarios')
   @yield('content_usuarios_registro')
+  <!-- Tipos de Usuarios -->
+  @yield('content_tipo_usuarios')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
