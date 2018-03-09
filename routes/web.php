@@ -23,6 +23,8 @@ Route::get('/tables', 'PrincipalController@tables');
 Route::resource('/usuarios', 'UsuariosController');
 Route::get('usuarios/create', 'UsuariosController@create');
 Route::post('usuarios/store', 'UsuariosController@store');
+Route::get('usuarios/{id}/edit', ['as' => 'usuarios/edit', 'uses' => 'UsuariosController@edit']);
+Route::put('usuarios/update', ['as' => 'usuarios/update', 'uses' => 'UsuariosController@update']);
 
 /*Rutas de TipoUsuariosController*/
 Route::resource('/tipo_usuarios', 'TipoUsuariosController');

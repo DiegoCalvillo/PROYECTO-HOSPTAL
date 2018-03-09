@@ -34,7 +34,9 @@
 								<tr>
 									<td>{{ $users->username }}</td>
 									<td>{{ $users->name }} {{ $users->ap_paterno }} {{ $users->ap_materno }}</td>
-									<td></td>
+									<td>
+										<a class="glyphicon glyphicon-pencil" href="{{ route('usuarios/edit', ['id' => $users->id] )}}"> Editar</a>
+									</td>
 								</tr>
 							@endforeach
 						</tbody>
