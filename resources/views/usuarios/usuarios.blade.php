@@ -17,7 +17,7 @@
 		<div class="card mb-3">
 			<div class="card-header">
 				<i class="fa fa-table"></i>
-				Registros
+				Total de Registros: <b>{{ $users->count() }}</b>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">

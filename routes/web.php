@@ -26,4 +26,6 @@ Route::post('usuarios/store', 'UsuariosController@store');
 
 /*Rutas de TipoUsuariosController*/
 Route::resource('/tipo_usuarios', 'TipoUsuariosController');
+Route::get('tipo_usuarios/create', 'TipoUsuariosController@create');
+Route::post('tipo_usuarios/store', 'TipoUsuariosController@store');
 

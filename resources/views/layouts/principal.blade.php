@@ -246,6 +246,7 @@
   @yield('content_usuarios_registro')
   <!-- Tipos de Usuarios -->
   @yield('content_tipo_usuarios')
+  @yield('content_tipo_usuarios_registro')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">

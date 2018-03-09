@@ -17,7 +17,7 @@
 			<form method="POST" action="http://192.168.1.66:8080/usuarios/store">
 				<div class="card card-register mx-auto mt-5">
 					<div class="card-header">
-						Información General
+						<b>Información General</b>
 					</div>
 					<div class="card-body">
 						<div class="form-group">
@@ -44,6 +44,10 @@
 									{!! Form::label('full_name', 'Correo electrónico') !!}
 									{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Ej. usuario@gmail.com']) !!}
 								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-row">
 								<div class="col-md-6">
 									{!! Form::label('full_name', 'Tipo de Usuario') !!}
 									<select class="form-control" name="tipo_usuario">
@@ -66,7 +70,7 @@
 						</div>
 					</div>
 					<div class="card-header">
-						Credenciales de Usuario
+						<b>Credenciales de Usuario</b>
 					</div>
 					<div class="card-body">
 						<div class="form-group">
@@ -75,6 +79,10 @@
 									{!! Form::label('full_name', 'Nombre de Usuario') !!}
 									{!! Form::text('username', null, ['class' => 'form-control', 'placeholder' => 'Nombre de Usuario']) !!}
 								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-row">
 								<div class="col-md-6">
 									<label for="exampleInputName">Contraseña</label>
 									<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password">

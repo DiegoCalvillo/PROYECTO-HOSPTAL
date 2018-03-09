@@ -17,7 +17,7 @@
 		<div class="card mb-3">
 			<div class="card-header">
 				<i class="fa fa-table"></i>
-				Registros
+				Total de Registros: <b>{{ $tipos_usuarios->count() }}</b>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
@@ -33,11 +33,14 @@
 							@foreach($tipos_usuarios as $tipos_usuarios)
 								<tr>
 									<td>{{ $tipos_usuarios->tipo_usuario }}</td>
-									<td>{{ $tipos_usuarios->estatus_id }}</td>								
+									<td>{{ $tipos_usuarios->estatus->nombre_estatus }}</td>								
 								</tr>
 							@endforeach
 						</tbody>
 					</table>
+					<div class="col-4">
+						<a class="btn btn-primary btn-block" href="tipo_usuarios/create">Crear Nuevo</a>
+					</div>
 				</div>
 			</div>
 		</div>
