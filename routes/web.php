@@ -31,3 +31,9 @@ Route::resource('/tipo_usuarios', 'TipoUsuariosController');
 Route::get('tipo_usuarios/create', 'TipoUsuariosController@create');
 Route::post('tipo_usuarios/store', 'TipoUsuariosController@store');
 
+/*Rutas de LoginController*/
+Route::resource('/login', 'LoginController');
+Route::post('login/store', 'LoginController@store');
+Route::get('logout', 'LoginController@logout');
+
+Auth::routes();

@@ -8,6 +8,11 @@ use Hospital\Estatus as Estatus;
 
 class TipoUsuariosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
     	$tipos_usuarios = TipoUsuario::all();
