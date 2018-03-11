@@ -12,6 +12,7 @@
 			</li>
 			<li class="breadcrumb-item active">Registro de Tipos de Usuarios</li>
 		</ol>
+		@include('alerts.request')
 		<div class="container">
 			<form method="POST" action="http://192.168.1.66:8080/tipo_usuarios/store">
 				<div class="card card-register mx-auto mt-5">
@@ -28,7 +29,7 @@
 								<div class="col-md-6">
 									{!! Form::label('full_name', 'Estatus') !!}
 									<select class="form-control" name="estatus_id">
-										<option value="">Seleccione</option>
+										<option value="" selected="1">Seleccione</option>
 										<?php foreach($estatus as $estatus){
 											echo '<option value="'.$estatus['id'].'">'.$estatus['nombre_estatus'].'</option>';
 										}?>

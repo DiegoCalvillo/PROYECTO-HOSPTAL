@@ -11,6 +11,6 @@ class TipoUsuario extends Model
 
     public function estatus()
     {
-    	return $this->belongsTo(Estatus::class);
+    	return $this->belongsTo(Estatus::class, 'estatus_id');
     }
 }
