@@ -32,7 +32,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="/">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Inicio</span>
           </a>
@@ -44,10 +44,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseUsers">
             <li>
-              <a href="http://192.168.1.66:8080/usuarios">Usuarios</a>
+              <a href="http://192.168.0.106:8080/usuarios">Usuarios</a>
             </li>
             <li>
-              <a href="http://192.168.1.66:8080/tipo_usuarios">Tipos de Usuario</a>
+              <a href="http://192.168.0.106:8080/tipo_usuarios">Tipos de Usuario</a>
             </li>
           </ul>
         </li>
@@ -248,6 +248,7 @@
   <!-- Tipos de Usuarios -->
   @yield('content_tipo_usuarios')
   @yield('content_tipo_usuarios_registro')
+  @yield('content_tipo_usuarios_editar')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">

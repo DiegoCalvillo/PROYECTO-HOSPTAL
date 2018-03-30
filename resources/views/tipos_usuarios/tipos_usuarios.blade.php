@@ -33,7 +33,10 @@
 							@foreach($tipos_usuarios as $tipos_usuarios)
 								<tr>
 									<td>{{ $tipos_usuarios->tipo_usuario }}</td>
-									<td>{{ $tipos_usuarios->estatus->nombre_estatus }}</td>								
+									<td>{{ $tipos_usuarios->estatus->nombre_estatus }}</td>
+									<td>
+										<a class="glyphicon glyphicon-pencil" href="{{ route('tipo_usuarios/edit', ['id' => $tipos_usuarios->id] )}}"> Editar</a>
+									</td>								
 								</tr>
 							@endforeach
 						</tbody>

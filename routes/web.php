@@ -30,6 +30,8 @@ Route::put('usuarios/update', ['as' => 'usuarios/update', 'uses' => 'UsuariosCon
 Route::resource('/tipo_usuarios', 'TipoUsuariosController');
 Route::get('tipo_usuarios/create', 'TipoUsuariosController@create');
 Route::post('tipo_usuarios/store', 'TipoUsuariosController@store');
+Route::get('tipo_usuarios/{id}/edit', ['as' => 'tipo_usuarios/edit', 'uses' => 'TipoUsuariosController@edit']);
+Route::put('tipo_usuarios/update', ['as' => 'tipo_usuarios/update', 'uses' => 'TipoUsuariosController@update']);
 
 /*Rutas de LoginController*/
 Route::resource('/login', 'LoginController');

@@ -2,6 +2,19 @@
 
 @section('content_usuarios')
 <div class="content-wrapper">
+	<?php $message=Session::get('message') ?>
+
+	@if($message == 'store')
+		<div class="alert alert-success" role="alert">
+        Registro creado exitosamente <a href="/usuarios" class="alert-link">Click aqui para quitar mensaje</a>.
+        </div>
+	@endif
+
+	@if($message == 'edit')
+		<div class="alert alert-success" role="alert">
+        Registro modificado exitosamente <a href="/usuarios" class="alert-link">Click aqui para quitar mensaje</a>.
+        </div>
+	@endif
 	<div class="container-fluid">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">
@@ -26,6 +39,7 @@
 							<tr>
 								<th>Nombre de Usuario</th>
 								<th>Nombre</th>
+								<th>Usuario</th>
 								<th>Opciones</th>
 							</tr>
 						</thead>
@@ -34,6 +48,7 @@
 								<tr>
 									<td>{{ $users->username }}</td>
 									<td>{{ $users->name }} {{ $users->ap_paterno }} {{ $users->ap_materno }}</td>
+									<td>{{ $users-> tipo_usuario->tipo_usuario }}</td>
 									<td>
 										<a class="glyphicon glyphicon-pencil" href="{{ route('usuarios/edit', ['id' => $users->id] )}}"> Editar</a>
 									</td>

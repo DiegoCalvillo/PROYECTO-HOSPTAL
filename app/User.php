@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'ap_paterno', 'ap_materno', 'username', 'tipo_usuario_id', 'email', 'password', 'estatus_usuario_id',
     ];
 
     /**
@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function tipo_usuario()
+    {
+        return $this->belongsTo(TipoUsuario::class);
+    }
 }
