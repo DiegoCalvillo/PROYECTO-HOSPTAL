@@ -38,4 +38,8 @@ Route::resource('/login', 'LoginController');
 Route::post('login/store', 'LoginController@store');
 Route::get('logout', 'LoginController@logout');
 
+/*Rutas para PacientesController*/
+Route::resource('/pacientes', 'PacientesController');
+Route::get('pacientes/create', 'PacientesController@create');
+
 Auth::routes();

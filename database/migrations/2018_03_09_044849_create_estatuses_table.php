@@ -27,6 +27,6 @@ class CreateEstatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estatuses');
+        Schema::dropIfExists('estatus');
     }
 }

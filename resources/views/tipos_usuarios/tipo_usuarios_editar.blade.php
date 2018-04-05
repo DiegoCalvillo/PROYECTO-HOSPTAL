@@ -34,7 +34,7 @@
 							<div class="col-md-6">
 								{!! Form::label('full_name', 'Estatus') !!}
 								<select class="form-control" name="estatus_id">
-									<option value="{{ $tipos_usuarios->id }}">Seleccione</option>
+									<option value="{{ $tipos_usuarios->estatus_id }}">Seleccione</option>
 									<?php foreach($estatus as $estatus){
 										echo '<option value="'.$estatus['id'].'">'.$estatus['nombre_estatus'].'</option>';
 									}?>

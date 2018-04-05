@@ -25,7 +25,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Sistema de Hospital</a>
+    <a class="navbar-brand" href="/">Sistema de Hospital</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,15 +39,29 @@
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-users"></i>
+            <i class="fa fa-fw fa-user"></i>
             <span class="nav-link-text">Usuarios</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseUsers">
             <li>
-              <a href="http://192.168.0.106:8080/usuarios">Usuarios</a>
+              <a href="http://192.168.1.64:8080/usuarios">Usuarios</a>
             </li>
             <li>
-              <a href="http://192.168.0.106:8080/tipo_usuarios">Tipos de Usuario</a>
+              <a href="http://192.168.1.64:8080/tipo_usuarios">Tipos de Usuario</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pacientes">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePacientes" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-users"></i>
+            <span class="nav-link-text">Pacientes</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapsePacientes">
+            <li>
+              <a href="">Lista de Pacientes</a>
+            </li>
+            <li>
+              <a href="">Registrar Nuevo Paciente</a>
             </li>
           </ul>
         </li>
@@ -140,6 +154,13 @@
           <a class="nav-link text-center" id="sidenavToggler">
             <i class="fa fa-fw fa-angle-left"></i>
           </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <h5>
+            <a class="navbar-brand" href="#">Cuenta de: {{ Auth::User()->tipo_usuario->tipo_usuario }}</a>
+          </h5>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -249,6 +270,8 @@
   @yield('content_tipo_usuarios')
   @yield('content_tipo_usuarios_registro')
   @yield('content_tipo_usuarios_editar')
+  <!--Pacientes-->
+  @yield('content_pacientes')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
