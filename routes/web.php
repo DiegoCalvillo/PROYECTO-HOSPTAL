@@ -33,6 +33,9 @@ Route::post('tipo_usuarios/store', 'TipoUsuariosController@store');
 Route::get('tipo_usuarios/{id}/edit', ['as' => 'tipo_usuarios/edit', 'uses' => 'TipoUsuariosController@edit']);
 Route::put('tipo_usuarios/update', ['as' => 'tipo_usuarios/update', 'uses' => 'TipoUsuariosController@update']);
 
+/*Rutas de EstadosMunicipiosController*/
+Route::get('municipios/{id}', 'EstadosMunicipiosController@getMunicipios');
+
 /*Rutas de LoginController*/
 Route::resource('/login', 'LoginController');
 Route::post('login/store', 'LoginController@store');
@@ -41,5 +44,6 @@ Route::get('logout', 'LoginController@logout');
 /*Rutas para PacientesController*/
 Route::resource('/pacientes', 'PacientesController');
 Route::get('pacientes/create', 'PacientesController@create');
+
 
 Auth::routes();

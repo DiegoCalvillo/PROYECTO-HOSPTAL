@@ -8,6 +8,7 @@ use Hospital\TipoUsuario as TipoUsuario;
 use Hospital\EstatusUsuario as EstatusUsuario;
 use Hospital\Http\Requests\UsuariosRegistroRequest;
 use Hospital\Http\Requests\UsuariosEditarRequest;
+use Auth;
 
 class UsuariosController extends Controller
 {
@@ -19,7 +20,7 @@ class UsuariosController extends Controller
 
     public function index()
     {
-    	$users = User::all();
+    	$users = User::where('id', '!=', Auth::User()->id)->get();
     	return view('usuarios.usuarios')->with('users', $users);
     }
 

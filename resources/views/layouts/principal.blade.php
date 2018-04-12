@@ -58,10 +58,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapsePacientes">
             <li>
-              <a href="">Lista de Pacientes</a>
+              <a href="http://192.168.1.64:8080/pacientes">Lista de Pacientes</a>
             </li>
             <li>
-              <a href="">Registrar Nuevo Paciente</a>
+              <a href="http://192.168.1.64:8080/pacientes/create">Registrar Nuevo Paciente</a>
             </li>
           </ul>
         </li>
@@ -272,6 +272,7 @@
   @yield('content_tipo_usuarios_editar')
   <!--Pacientes-->
   @yield('content_pacientes')
+  @yield('content_pacientes_registro')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
@@ -304,7 +305,8 @@
     <!-- Bootstrap core JavaScript
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-    {!! Html::script('vendor/jquery/jquery.min.js') !!}
+    {!! Html::script('js/jquery.min.js') !!}
+
     {!! Html::script('vendor/bootstrap/js/bootstrap.bundle.min.js') !!}
     <!-- Core plugin JavaScript
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>-->
@@ -316,13 +318,17 @@
     {!! Html::script('vendor/chart.js/Chart.min.js') !!}
     {!! Html::script('vendor/datatables/jquery.dataTables.js') !!}
     {!! Html::script('vendor/datatables/dataTables.bootstrap4.js') !!}
+
+    <!--Dropdown Estado-->
+    {!! Html::script('js/dropdown_estados.js') !!}
+    
     <!-- Custom scripts for all pages
     <script src="js/sb-admin.min.js"></script>-->
     {!! Html::script('js/sb-admin.min.js') !!}
     <!-- Custom scripts for this page
     <script src="js/sb-admin-datatables.min.js"></script>
-    <script src="js/sb-admin-charts.min.js"></script>-->
-    {!! Html::script('js/sb-admin-datatables.min.js') !!}
+    <script src="js/sb-admin-charts.min.js"></script>
+    {!! Html::script('js/sb-admin-datatables.min.js') !!}-->
     {!! Html::script('js/sb-admin-charts.min.js') !!}
 </body>
 
