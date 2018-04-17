@@ -14,7 +14,7 @@
 		</ol>
 		@include('alerts.request')
 		<div class="container">
-			<form method="POST" action="http://192.168.1.64:8080/tipo_usuarios/store">
+			<form method="POST" action="http://192.168.1.66:8080/tipo_usuarios/store">
 				<div class="card card-register mx-auto mt-5">
 					<div class="card-header">
 						<b>Información de Registro</b>

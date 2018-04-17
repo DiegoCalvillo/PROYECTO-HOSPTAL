@@ -44,5 +44,6 @@ Route::get('logout', 'LoginController@logout');
 /*Rutas para PacientesController*/
 Route::resource('/pacientes', 'PacientesController');
 Route::get('pacientes/create', 'PacientesController@create');
+Route::post('pacientes/store', 'PacientesController@store');
 
 Auth::routes();

@@ -46,10 +46,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseUsers">
             <li>
-              <a href="http://192.168.1.64:8080/usuarios">Usuarios</a>
+              <a href="http://192.168.1.66:8080/usuarios">Usuarios</a>
             </li>
             <li>
-              <a href="http://192.168.1.64:8080/tipo_usuarios">Tipos de Usuario</a>
+              <a href="http://192.168.1.66:8080/tipo_usuarios">Tipos de Usuario</a>
             </li>
           </ul>
         </li>
@@ -60,10 +60,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapsePacientes">
             <li>
-              <a href="http://192.168.1.64:8080/pacientes">Lista de Pacientes</a>
+              <a href="http://192.168.1.66:8080/pacientes">Lista de Pacientes</a>
             </li>
             <li>
-              <a href="http://192.168.1.64:8080/pacientes/create">Registrar Nuevo Paciente</a>
+              <a href="http://192.168.1.66:8080/pacientes/create">Registrar Nuevo Paciente</a>
             </li>
           </ul>
         </li>

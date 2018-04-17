@@ -12,8 +12,8 @@ class MunicipiosSeeder extends Seeder
     public function run()
     {
         DB::table('municipios')->insert([
-        	'nombre_municipio' => 'Doctor Coss',
-        	'estado_id' => 19,
+        	'nombre_municipio' => 'Loreto',
+        	'estado_id' => 3,
         	'created_at' => date('Y-m-d H:m:s'),
         	'updated_at' => date('Y-m-d H:m:s'),
         ]);

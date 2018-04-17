@@ -13,7 +13,7 @@
 			<li class="breadcrumb-item active">Registro de Pacientes</li>
 		</ol>
 		<div class="container">
-			<form>
+			<form method="POST" action="http://192.168.1.66:8080/pacientes/store">
 				<div class="card card-register mx-auto mt-5">
 					<div class="card-header">
 						<b>Datos generales del paciente</b>
@@ -63,7 +63,16 @@
 								</div>
 							</div>
 						</div>
+						<div class="form-group">
+							<div class="form-row">
+								<div class="col-md-12">
+									{!! Form::label('full_name', 'Dirección') !!}
+									{!! Form::text('direccion_paciente', null, ['class' => 'form-control', 'placeholder' => 'Dirección']) !!}
+								</div>
+							</div>
+						</div>
 					</div>
+					<button class="btn btn-primary" type="submit">Registrar Paciente</button>
 				</div>
 			</form>
 		</div>

@@ -16,7 +16,8 @@ class PacientesController extends Controller
 	
     public function index()
     {
-    	return view('pacientes.pacientes');
+        $paciente = pacientes::all();
+    	return view('pacientes.pacientes')->with('paciente', $paciente);
     }
 
     public function create()
@@ -25,12 +26,18 @@ class PacientesController extends Controller
     	return view('pacientes.pacientes_registro', compact('estados'));
     }
 
-    public function getMunicipios(Request $request, $id)
+    public function store(Request $request)
     {
-    	if($request->ajax())
-    	{
-    		$municipios = Municipios::municipios($id);
-    		return response()->json($municipios);
-    	}
+        $pacientes = new pacientes;
+        $pacientes->nombre_paciente = $request->nombre_paciente;
+        $pacientes->ap_paterno = $request->ap_paterno;
+        $pacientes->ap_materno = $request->ap_materno;
+        $pacientes->genero_paciente = $request->genero_paciente;
+        $pacientes->estado_paciente = $request->estados;
+        $pacientes->municipio_paciente = $request->municipios;
+        $pacientes->direccion_paciente = $request->direccion_paciente;
+        $pacientes->email = $request->email;
+        $pacientes->save();
+        return redirect('/pacientes');
     }
 }

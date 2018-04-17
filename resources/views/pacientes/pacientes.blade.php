@@ -17,7 +17,7 @@
 		<div class="card mb-3">
 			<div class="card-header">
 				<i class="fa fa-table"></i>
-				Total de Registros:
+				Total de Registros: <b>{{ $paciente->count() }}</b>
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
@@ -25,12 +25,18 @@
 						<thead>
 							<tr>
 								<th>Nombre</th>
-								<th>Estado del Paciente</th>
+								<th>Apellidos</th>
 								<th>Opciones</th>
 							</tr>
 						</thead>
 						<tbody>
-							
+							@foreach($paciente as $paciente)
+								<tr>
+									<td>{{ $paciente->nombre_paciente }}</td>
+									<td>{{ $paciente->ap_paterno }} {{ $paciente->ap_materno }}</td>
+									<td></td>
+								</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>

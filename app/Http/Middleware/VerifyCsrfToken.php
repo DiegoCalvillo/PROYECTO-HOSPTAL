@@ -14,6 +14,7 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
         'usuarios/store',
         'tipo_usuarios/store',
-        'login/store'
+        'login/store',
+        'pacientes/store'
     ];
 }
