@@ -51,6 +51,11 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="card-header">
+						<b>Dirección</b>
+					</div>
+					<div class="card-body">
 						<div class="form-group">
 							<div class="form-row">
 								<div class="col-md-6">
@@ -58,16 +63,20 @@
 									{!! Form::select('estados', $estados, null, ['id' => 'estados', 'class' => 'form-control', 'placeholder' => 'Seleccione']) !!}
 								</div>
 								<div class="col-md-6">
-									{!! Form::label('full_name', 'Municipio') !!}
+									{!! Form::label('full_name', 'Municipio o delegación') !!}
 									{!! Form::select('municipios', ['placeholder' => 'Seleccione el Municipio'], null, ['id' => 'municipios', 'class' => 'form-control', 'required' => 'required']) !!}
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="form-row">
-								<div class="col-md-12">
-									{!! Form::label('full_name', 'Dirección') !!}
-									{!! Form::text('direccion_paciente', null, ['class' => 'form-control', 'placeholder' => 'Dirección']) !!}
+								<div class="col-md-6">
+									{!! Form::label('full_name', 'Calle') !!}
+									{!! Form::text('calle_paciente', null, ['class' => 'form-control']) !!}
+								</div>
+								<div class="col-md-6">
+									{!! Form::label('full_name', 'Número o Apartamento') !!}
+									{!! Form::text('numero_casa_paciente', null, ['class' => 'form-control']) !!}
 								</div>
 							</div>
 						</div>

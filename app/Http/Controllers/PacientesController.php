@@ -35,7 +35,7 @@ class PacientesController extends Controller
         $pacientes->genero_paciente = $request->genero_paciente;
         $pacientes->estado_paciente = $request->estados;
         $pacientes->municipio_paciente = $request->municipios;
-        $pacientes->direccion_paciente = $request->direccion_paciente;
+        $pacientes->calle_paciente = $request->calle_paciente;
         $pacientes->email = $request->email;
         $pacientes->save();
         return redirect('/pacientes');

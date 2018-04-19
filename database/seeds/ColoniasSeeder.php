@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class MunicipiosSeeder extends Seeder
+class ColoniasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,9 +11,9 @@ class MunicipiosSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('municipios')->insert([
-        	'nombre_municipio' => 'Zaragoza',
-        	'estado_id' => 8,
+        DB::table('colonias')->insert([
+        	'nombre_colonia' => 'Puerta de Anahuac',
+        	'municipio_id' => 30,
         	'created_at' => date('Y-m-d H:m:s'),
         	'updated_at' => date('Y-m-d H:m:s'),
         ]);

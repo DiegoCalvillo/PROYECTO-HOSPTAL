@@ -21,8 +21,11 @@ class CreatePacientesTable extends Migration
             $table->integer("genero_paciente");
             $table->integer("estado_paciente");
             $table->integer("municipio_paciente");
-            $table->string("direccion_paciente");
+            $table->string("calle_paciente");
             $table->string("email");
+            $table->string("numero_casa_paciente")
+            $table->string("colonia_paciente");
+            $table->string("codigo_postal_paciente");
             $table->timestamps();
         });
     }
