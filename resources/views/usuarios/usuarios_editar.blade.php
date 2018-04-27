@@ -21,7 +21,6 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="card card-register mx-auto mt-5">
 				<div class="card-header">
 					<b>Información General</b>
 				</div>
@@ -99,7 +98,6 @@
 					</div>
 				</div>
 				<button class="btn btn-primary" type="submit">Grabar</button>
-			</div>
 		</div>
 	</div>
 </div>

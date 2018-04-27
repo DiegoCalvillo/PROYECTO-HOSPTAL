@@ -45,5 +45,7 @@ Route::get('logout', 'LoginController@logout');
 Route::resource('/pacientes', 'PacientesController');
 Route::get('pacientes/create', 'PacientesController@create');
 Route::post('pacientes/store', 'PacientesController@store');
+Route::get('pacientes/{id}/edit', ['as' => 'pacientes/edit', 'uses' => 'PacientesController@edit']);
+Route::put('pacientes/update', ['as' => 'pacientes/update', 'uses' => 'PacientesController@update']);
 
 Auth::routes();

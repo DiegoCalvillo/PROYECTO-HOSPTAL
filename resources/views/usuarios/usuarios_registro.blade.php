@@ -15,7 +15,6 @@
 		@include('alerts.request')
 		<div class="container">
 			<form method="POST" action="http://192.168.1.66:8080/usuarios/store">
-				<div class="card card-register mx-auto mt-5">
 					<div class="card-header">
 						<b>Información General</b>
 					</div>
@@ -95,7 +94,6 @@
 						</div>
 					</div>
 					<button class="btn btn-primary" type="submit">Registrar Usuario</button>
-				</div>
 			</form>
 		</div>
 	</div>

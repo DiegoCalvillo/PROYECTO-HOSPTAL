@@ -34,7 +34,9 @@
 								<tr>
 									<td>{{ $paciente->nombre_paciente }}</td>
 									<td>{{ $paciente->ap_paterno }} {{ $paciente->ap_materno }}</td>
-									<td></td>
+									<td>
+										<a class="glyphicon glyphicon-pencil" href="{{ route('pacientes/edit', ['id' => $paciente->id] )}}"> Editar</a>
+									</td>
 								</tr>
 							@endforeach
 						</tbody>

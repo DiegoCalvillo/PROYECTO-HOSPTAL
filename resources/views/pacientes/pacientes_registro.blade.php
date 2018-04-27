@@ -12,9 +12,9 @@
 			</li>
 			<li class="breadcrumb-item active">Registro de Pacientes</li>
 		</ol>
+		@include('alerts.request')
 		<div class="container">
 			<form method="POST" action="http://192.168.1.66:8080/pacientes/store">
-				<div class="card card-register mx-auto mt-5">
 					<div class="card-header">
 						<b>Datos generales del paciente</b>
 					</div>
@@ -22,15 +22,15 @@
 						<div class="form-group">
 							<div class="form-row">
 								<div class="col-md-4">
-									{!! Form::label('full_name', 'Nombre') !!}
+									{!! Form::label('full_name', 'Nombre *') !!}
 									{!! Form::text('nombre_paciente', null, ['class' => 'form-control', 'placeholder' => 'Nombre']) !!}
 								</div>
 								<div class="col-md-4">
-									{!! Form::label('full_name', 'Primer Apellido') !!}
+									{!! Form::label('full_name', 'Primer Apellido *') !!}
 									{!! Form::text('ap_paterno', null, ['class' => 'form-control', 'placeholder' => 'Apellido paterno']) !!}
 								</div>
 								<div class="col-md-4">
-									{!! Form::label('full_name', 'Segundo Apellido') !!}
+									{!! Form::label('full_name', 'Segundo Apellido *') !!}
 									{!! Form::text('ap_materno', null, ['class' => 'form-control', 'placeholder' => 'Apellido materno']) !!}
 								</div>
 							</div>
@@ -38,7 +38,7 @@
 						<div class="form-group">
 							<div class="form-row">
 								<div class="col-md-4">
-									{!! Form::label('full_name', 'Genero del Paciente') !!}
+									{!! Form::label('full_name', 'Genero del Paciente *') !!}
 									<select class="form-control" name="genero_paciente">
 										<option value="">Seleccione</option>
 										<option value="1">Masculino</option>
@@ -59,30 +59,41 @@
 						<div class="form-group">
 							<div class="form-row">
 								<div class="col-md-6">
-									{!! Form::label('full_name', 'Estado') !!}
-									{!! Form::select('estados', $estados, null, ['id' => 'estados', 'class' => 'form-control', 'placeholder' => 'Seleccione']) !!}
+									{!! Form::label('full_name', 'Estado *') !!}
+									{!! Form::select('estados', $estados, null, ['id' => 'estados', 'class' => 'form-control', 'placeholder' => 'Seleccione el estado']) !!}
 								</div>
 								<div class="col-md-6">
-									{!! Form::label('full_name', 'Municipio o delegación') !!}
+									{!! Form::label('full_name', 'Municipio o delegación *') !!}
 									{!! Form::select('municipios', ['placeholder' => 'Seleccione el Municipio'], null, ['id' => 'municipios', 'class' => 'form-control', 'required' => 'required']) !!}
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="form-row">
+								<div class="col-md-8">
+									{!! Form::label('full_name', 'Colonia *') !!}
+									{!! Form::text('colonia_paciente', null, ['class' => 'form-control']) !!}
+								</div>
+								<div class="col-md-4">
+									{!! Form::label('full_name', 'Código Postal') !!}
+									{!! Form::text('numero_postal_paciente', null, ['class' => 'form-control']) !!}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-row">
 								<div class="col-md-6">
-									{!! Form::label('full_name', 'Calle') !!}
+									{!! Form::label('full_name', 'Calle *') !!}
 									{!! Form::text('calle_paciente', null, ['class' => 'form-control']) !!}
 								</div>
 								<div class="col-md-6">
-									{!! Form::label('full_name', 'Número o Apartamento') !!}
+									{!! Form::label('full_name', 'Número o Apartamento *') !!}
 									{!! Form::text('numero_casa_paciente', null, ['class' => 'form-control']) !!}
 								</div>
 							</div>
 						</div>
 					</div>
 					<button class="btn btn-primary" type="submit">Registrar Paciente</button>
-				</div>
 			</form>
 		</div>
 	</div>

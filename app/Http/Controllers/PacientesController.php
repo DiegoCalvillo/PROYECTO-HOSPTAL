@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Hospital\pacientes as pacientes;
 use Hospital\EstadosPais as EstadosPais;
 use Hospital\Municipios as Municipios;
+use Hospital\Http\Requests\PacientesRequest;
 
 class PacientesController extends Controller
 {
@@ -26,7 +27,7 @@ class PacientesController extends Controller
     	return view('pacientes.pacientes_registro', compact('estados'));
     }
 
-    public function store(Request $request)
+    public function store(PacientesRequest $request)
     {
         $pacientes = new pacientes;
         $pacientes->nombre_paciente = $request->nombre_paciente;
@@ -37,7 +38,16 @@ class PacientesController extends Controller
         $pacientes->municipio_paciente = $request->municipios;
         $pacientes->calle_paciente = $request->calle_paciente;
         $pacientes->email = $request->email;
+        $pacientes->colonia_paciente = $request->colonia_paciente;
+        $pacientes->numero_casa_paciente = $request->numero_casa_paciente;
         $pacientes->save();
         return redirect('/pacientes');
+    }
+
+    public function edit($id)
+    {
+        $paciente = pacientes::find($id);
+        $estados = EstadosPais::pluck('nombre_estado', 'id');
+        return view('pacientes.pacientes_editar', compact('paciente'))->with('estados', $estados);
     }
 }
