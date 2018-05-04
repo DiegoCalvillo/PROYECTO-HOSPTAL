@@ -7,6 +7,7 @@ use Hospital\pacientes as pacientes;
 use Hospital\EstadosPais as EstadosPais;
 use Hospital\Municipios as Municipios;
 use Hospital\Http\Requests\PacientesRequest;
+use JavaScript;
 
 class PacientesController extends Controller
 {
@@ -48,6 +49,7 @@ class PacientesController extends Controller
     {
         $paciente = pacientes::find($id);
         $estados = EstadosPais::pluck('nombre_estado', 'id');
-        return view('pacientes.pacientes_editar', compact('paciente'))->with('estados', $estados);
+        $municipios = Municipios::where('id', '=', $paciente->municipio_paciente)->get();
+        return view('pacientes.pacientes_editar', compact('paciente'))->with('estados', $estados)->with('municipios', $municipios);
     }
 }

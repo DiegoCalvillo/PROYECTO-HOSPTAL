@@ -43,8 +43,8 @@
 				</div>
 				<div class="form-group">
 					<div class="form-row">
-							<div class="col-md-4">
-								{!! Form::label('full_name', 'Genero del Paciente *') !!}
+						<div class="col-md-4">
+							{!! Form::label('full_name', 'Genero del Paciente *') !!}
 							<select class="form-control" name="genero_paciente">
 								<option value="{{ $paciente->genero_paciente }}">Seleccione</option>
 								<option value="1">Masculino</option>
@@ -70,7 +70,13 @@
 						</div>
 						<div class="col-md-6">
 							{!! Form::label('full_name', 'Municipio o delegación *') !!}
-							{!! Form::select('municipios', ['placeholder' => 'Seleccione el Municipio'], null, ['id' => 'municipios', 'class' => 'form-control', 'required' => 'required', 'selected' => 59]) !!}
+							@if(!empty($paciente->municipio_paciente))
+								<select class="form-control" name="municipios">
+									<option value="{{ $paciente->municipio_paciente }}">{{ $paciente->municipios->nombre_municipio }}</option>
+								</select>
+							@else
+								{!! Form::select('municipios', ['placeholder' => 'Seleccione el Municipio'], null, ['id' => 'municipios', 'class' => 'form-control', 'required' => 'required']) !!}
+							@endif
 						</div>
 					</div>
 				</div>
@@ -104,3 +110,5 @@
 	</div>
 </div>
 @stop
+{!! Html::script('js/jquery.min.js') !!}
+{!! Html::script('js/dropdown_estados_editar.js') !!}
