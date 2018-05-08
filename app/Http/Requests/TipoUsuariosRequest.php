@@ -26,6 +26,7 @@ class TipoUsuariosRequest extends FormRequest
         return [
             'tipo_usuario' => 'required',
             'estatus_id' => 'required'
+            'clave' => 'required|unique:tipo_usuarios'
         ];
     }
 
@@ -33,7 +34,9 @@ class TipoUsuariosRequest extends FormRequest
     {
         return [
             'tipo_usuario.required' => 'Tipo de Usuario está vacio',
-            'estatus_id.required' => 'Debe elegir un estatus'
+            'estatus_id.required' => 'Debe elegir un estatus',
+            'clave.required' => 'El campo Clave no puede estar vacio',
+            'clave.unique' => 'Ya existe un registro con esa Clave' 
         ];
     }
 }
