@@ -52,4 +52,10 @@ class PacientesController extends Controller
         $municipios = Municipios::where('id', '=', $paciente->municipio_paciente)->get();
         return view('pacientes.pacientes_editar', compact('paciente'))->with('estados', $estados)->with('municipios', $municipios);
     }
+
+    public function show($id)
+    {
+        $paciente = pacientes::find($id);
+        return view('pacientes.pacientes_perfil')->with('paciente', $paciente);
+    }
 }

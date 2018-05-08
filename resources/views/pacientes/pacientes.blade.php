@@ -32,7 +32,9 @@
 						<tbody>
 							@foreach($paciente as $paciente)
 								<tr>
-									<td>{{ $paciente->nombre_paciente }}</td>
+									<td>
+										<a href="{{ route('pacientes/show', ['id' => $paciente->id]) }}">{{ $paciente->nombre_paciente }}</a>
+									</td>
 									<td>{{ $paciente->ap_paterno }} {{ $paciente->ap_materno }}</td>
 									<td>
 										<a class="glyphicon glyphicon-pencil" href="{{ route('pacientes/edit', ['id' => $paciente->id] )}}"> Editar</a>

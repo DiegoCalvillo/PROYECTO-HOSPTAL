@@ -277,6 +277,7 @@
   @yield('content_pacientes')
   @yield('content_pacientes_registro')
   @yield('content_pacientes_editar')
+  @yield('content_pacientes_perfil')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
