@@ -13,4 +13,9 @@ class pacientes extends Model
     {
     	return $this->belongsTo(Municipios::class, 'municipio_paciente');
     }
+
+    public function estados()
+    {
+    	return $this->belongsTo(EstadosPais::class, 'estado_paciente');
+    }
 }
