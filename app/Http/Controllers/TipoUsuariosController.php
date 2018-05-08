@@ -31,6 +31,7 @@ class TipoUsuariosController extends Controller
     	$tipos_usuarios = new TipoUsuario;
     	$tipos_usuarios->tipo_usuario = $request->tipo_usuario;
     	$tipos_usuarios->estatus_id = $request->estatus_id;
+        $tipos_usuarios->clave = $request->clave;
     	$tipos_usuarios->save();
     	return redirect('/tipo_usuarios');
     }
@@ -48,6 +49,7 @@ class TipoUsuariosController extends Controller
         $tipos_usuarios = TipoUsuario::find($request->id);
         $tipos_usuarios->tipo_usuario = $request->tipo_usuario;
         $tipos_usuarios->estatus_id = $request->estatus_id;
+        $tipos_usuarios->clave = $request->clave;
         $tipos_usuarios->save();
         return redirect('/tipo_usuarios');
     }

@@ -26,6 +26,7 @@
 							<tr>
 								<th>Tipo de Usuario</th>
 								<th>Estatus</th>
+								<th>Clave</th>
 								<th>Opciones</th>
 							</tr>
 						</thead>
@@ -34,6 +35,7 @@
 								<tr>
 									<td>{{ $tipos_usuarios->tipo_usuario }}</td>
 									<td>{{ $tipos_usuarios->estatus->nombre_estatus }}</td>
+									<td>{{ $tipos_usuarios->clave }}</td>
 									<td>
 										<a class="glyphicon glyphicon-pencil" href="{{ route('tipo_usuarios/edit', ['id' => $tipos_usuarios->id] )}}"> Editar</a>
 									</td>								

@@ -20,31 +20,33 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="card card-register mx-auto mt-5">
-				<div class="card-header">
-					<b>Información de Registro</b>
-				</div>
-				<div class="card-body">
-					<div class="form-group">
-						<div class="form-row">
-							<div class="col-md-6">
-								{!! Form::label('full_name', 'Tipo de Usuario') !!}
-								{!! Form::text('tipo_usuario', null, ['class' => 'form-control']) !!}
-							</div>
-							<div class="col-md-6">
-								{!! Form::label('full_name', 'Estatus') !!}
-								<select class="form-control" name="estatus_id">
-									<option value="{{ $tipos_usuarios->estatus_id }}">Seleccione</option>
-									<?php foreach($estatus as $estatus){
-										echo '<option value="'.$estatus['id'].'">'.$estatus['nombre_estatus'].'</option>';
-									}?>
-								</select>
-							</div>
+			<div class="card-header">
+				<b>Información de Registro</b>
+			</div>
+			<div class="card-body">
+				<div class="form-group">
+					<div class="form-row">
+						<div class="col-md-4">
+							{!! Form::label('full_name', 'Tipo de Usuario') !!}
+							{!! Form::text('tipo_usuario', null, ['class' => 'form-control']) !!}
+						</div>
+						<div class="col-md-4">
+							{!! Form::label('full_name', 'Clave') !!}
+							{!! Form::text('clave', null, ['class' => 'form-control']) !!}
+						</div>
+						<div class="col-md-4">
+							{!! Form::label('full_name', 'Estatus') !!}
+							<select class="form-control" name="estatus_id">
+								<option value="{{ $tipos_usuarios->estatus_id }}">Seleccione</option>
+								<?php foreach($estatus as $estatus){
+									echo '<option value="'.$estatus['id'].'">'.$estatus['nombre_estatus'].'</option>';
+								}?>
+							</select>
 						</div>
 					</div>
 				</div>
-				<button class="btn btn-primary" type="submit">Grabar</button>
 			</div>
+			<button class="btn btn-primary" type="submit">Grabar</button>
 		</div>
 	</div>
 </div>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TipoUsuario extends Model
 {
     protected $table = "tipo_usuarios";
-    protected $fillable = ['id', 'tipo_usuario', 'estatus_id'];
+    protected $fillable = ['id', 'tipo_usuario', 'estatus_id', 'clave'];
 
     public function estatus()
     {
