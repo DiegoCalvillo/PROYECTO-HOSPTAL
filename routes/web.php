@@ -32,6 +32,7 @@ Route::get('tipo_usuarios/create', 'TipoUsuariosController@create');
 Route::post('tipo_usuarios/store', 'TipoUsuariosController@store');
 Route::get('tipo_usuarios/{id}/edit', ['as' => 'tipo_usuarios/edit', 'uses' => 'TipoUsuariosController@edit']);
 Route::put('tipo_usuarios/update', ['as' => 'tipo_usuarios/update', 'uses' => 'TipoUsuariosController@update']);
+Route::get('tipo_usuarios/{id}', ['as' => 'tipo_usuarios/show', 'uses' => 'TipoUsuariosController@show']);
 
 /*Rutas de EstadosMunicipiosController*/
 Route::get('municipios/{id}', 'EstadosMunicipiosController@getMunicipios');

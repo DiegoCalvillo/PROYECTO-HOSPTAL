@@ -53,4 +53,10 @@ class TipoUsuariosController extends Controller
         $tipos_usuarios->save();
         return redirect('/tipo_usuarios');
     }
+
+    public function show($id)
+    {
+        $tipo_usuario = TipoUsuario::find($id);
+        return view('tipos_usuarios.tipos_usuarios_perfil')->with('tipo_usuario', $tipo_usuario);
+    }
 }

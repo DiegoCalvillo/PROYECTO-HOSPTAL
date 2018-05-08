@@ -273,6 +273,7 @@
   @yield('content_tipo_usuarios')
   @yield('content_tipo_usuarios_registro')
   @yield('content_tipo_usuarios_editar')
+  @yield('content_tipo_usuarios_perfil')
   <!--Pacientes-->
   @yield('content_pacientes')
   @yield('content_pacientes_registro')

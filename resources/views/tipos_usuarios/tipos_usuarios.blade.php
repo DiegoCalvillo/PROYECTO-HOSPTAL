@@ -33,7 +33,9 @@
 						<tbody>
 							@foreach($tipos_usuarios as $tipos_usuarios)
 								<tr>
-									<td>{{ $tipos_usuarios->tipo_usuario }}</td>
+									<td>
+										<a href="{{ route('tipo_usuarios/show', ['id' => $tipos_usuarios->id]) }}">{{ $tipos_usuarios->tipo_usuario }}</a>
+									</td>
 									<td>{{ $tipos_usuarios->estatus->nombre_estatus }}</td>
 									<td>{{ $tipos_usuarios->clave }}</td>
 									<td>
