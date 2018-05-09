@@ -21,7 +21,6 @@
   <link href="css/sb-admin.css" rel="stylesheet">-->
   {!! Html::style('css/sb-admin.css') !!}
 </head>
-
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
@@ -39,20 +38,22 @@
             <span class="nav-link-text">Inicio</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-user"></i>
-            <span class="nav-link-text">Usuarios</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseUsers">
-            <li>
-              <a href="http://192.168.1.66:8080/usuarios">Usuarios</a>
-            </li>
-            <li>
-              <a href="http://192.168.1.66:8080/tipo_usuarios">Tipos de Usuario</a>
-            </li>
-          </ul>
-        </li>
+        @if(Auth::User()->tipo_usuario->clave == "01")
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsers" data-parent="#exampleAccordion">
+              <i class="fa fa-fw fa-user"></i>
+              <span class="nav-link-text">Usuarios</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseUsers">
+              <li>
+                <a href="http://192.168.1.66:8080/usuarios">Usuarios</a>
+              </li>
+              <li>
+                <a href="http://192.168.1.66:8080/tipo_usuarios">Tipos de Usuario</a>
+              </li>
+            </ul>
+          </li>
+        @endif
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pacientes">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePacientes" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-users"></i>

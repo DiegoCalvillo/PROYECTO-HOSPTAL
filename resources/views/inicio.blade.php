@@ -10,6 +10,7 @@
         </li>
         <li class="breadcrumb-item active">{{ Auth::User()->name }}</li>
       </ol>
+      @include('alerts.errors')
       <!-- Icon Cards
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">
