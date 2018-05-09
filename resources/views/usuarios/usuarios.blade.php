@@ -50,7 +50,7 @@
 									<td>{{ $users->name }} {{ $users->ap_paterno }} {{ $users->ap_materno }}</td>
 									<td>{{ $users-> tipo_usuario->tipo_usuario }}</td>
 									<td>
-										<a class="glyphicon glyphicon-pencil" href="{{ route('usuarios/edit', ['id' => $users->id] )}}"> Editar</a>
+										<a class="glyphicon glyphicon-pencil" title="Editar" href="{{ route('usuarios/edit', ['id' => $users->id] )}}"><i class="fa fa-fw fa-pencil"></i></a>
 									</td>
 								</tr>
 							@endforeach

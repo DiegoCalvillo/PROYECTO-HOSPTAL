@@ -39,7 +39,7 @@
 									<td>{{ $tipos_usuarios->estatus->nombre_estatus }}</td>
 									<td>{{ $tipos_usuarios->clave }}</td>
 									<td>
-										<a class="glyphicon glyphicon-pencil" href="{{ route('tipo_usuarios/edit', ['id' => $tipos_usuarios->id] )}}"> Editar</a>
+										<a class="glyphicon glyphicon-pencil" title="Editar" href="{{ route('tipo_usuarios/edit', ['id' => $tipos_usuarios->id] )}}"><i class="fa fa-fw fa-pencil"></i></a>
 									</td>								
 								</tr>
 							@endforeach
