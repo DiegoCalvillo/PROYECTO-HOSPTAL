@@ -82,6 +82,31 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-6">
+					<h3>Historial Médico</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<div class="card-body">
+						<div class="table-resposive">
+							<table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
+								<tbody>
+									<tr>
+										<th>Médico que lo atiende</th>
+										@if(!empty($paciente->medico_id))
+											<td>{{ $paciente->medico->name }}</td>
+										@else
+											<td>Sin Registro</td>
+										@endif
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 		</form>
 	</div>
 </div>

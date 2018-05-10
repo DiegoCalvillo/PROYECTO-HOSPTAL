@@ -57,7 +57,11 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pacientes">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePacientes" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-users"></i>
-            <span class="nav-link-text">Pacientes</span>
+            @if(Auth::User()->tipo_usuario->clave == "05")
+              <span class="nav-link-text">Mis Pacientes</span>
+            @else
+              <span class="nav-link-text">Pacientes</span>
+            @endif
           </a>
           <ul class="sidenav-second-level collapse" id="collapsePacientes">
             <li>

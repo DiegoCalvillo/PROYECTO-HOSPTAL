@@ -8,6 +8,7 @@ use Hospital\EstadosPais as EstadosPais;
 use Hospital\Municipios as Municipios;
 use Hospital\User as User;
 use Hospital\TipoUsuario as TipoUsuario;
+use Auth;
 use Hospital\Http\Requests\PacientesRequest;
 use JavaScript;
 
@@ -20,7 +21,12 @@ class PacientesController extends Controller
 	
     public function index()
     {
-        $paciente = pacientes::all();
+        if(Auth::User()->tipo_usuario->clave == '05'){
+            $medico = Auth::User()->id;
+            $paciente = pacientes::where('medico_id', '=', $medico)->get();
+        } else {
+            $paciente = pacientes::all();
+        }
     	return view('pacientes.pacientes')->with('paciente', $paciente);
     }
 
@@ -45,9 +51,14 @@ class PacientesController extends Controller
         $pacientes->email = $request->email;
         $pacientes->colonia_paciente = $request->colonia_paciente;
         $pacientes->numero_casa_paciente = $request->numero_casa_paciente;
-        $pacientes->medico_id = $request->medico
+        $pacientes->numero_postal_paciente = $request->numero_postal_paciente;
+       if(Auth::User()->tipo_usuario->clave == '05') {
+            $pacientes->medico_id = Auth::User()->id;    
+        } else {
+             $pacientes->medico_id = $request->medico;
+        }
         $pacientes->save();
-        return redirect('/pacientes');
+        return redirect('/pacientes')->with('message', 'store');
     }
 
     public function edit($id)
@@ -64,5 +75,24 @@ class PacientesController extends Controller
     {
         $paciente = pacientes::find($id);
         return view('pacientes.pacientes_perfil')->with('paciente', $paciente);
+    }
+
+    public function update(Request $request)
+    {
+        $pacientes = pacientes::find($request->id);
+        $pacientes->nombre_paciente = $request->nombre_paciente;
+        $pacientes->ap_paterno = $request->ap_paterno;
+        $pacientes->ap_materno = $request->ap_materno;
+        $pacientes->genero_paciente = $request->genero_paciente;
+        $pacientes->estado_paciente = $request->estados;
+        $pacientes->municipio_paciente = $request->municipios;
+        $pacientes->calle_paciente = $request->calle_paciente;
+        $pacientes->email = $request->email;
+        $pacientes->colonia_paciente = $request->colonia_paciente;
+        $pacientes->numero_casa_paciente = $request->numero_casa_paciente;
+        $pacientes->numero_postal_paciente = $request->numero_postal_paciente;
+        $pacientes->medico_id = $request->medico;
+        $pacientes->save();
+        return redirect('/pacientes')->with('message', 'edit');
     }
 }

@@ -2,6 +2,18 @@
 
 @section('content_pacientes')
 <div class="content-wrapper">
+	<?php $message = Session::get('message') ?>
+	@if($message == 'store')
+		<div class="alert alert-success" role="alert">
+        Registro creado exitosamente <a href="/pacientes" class="alert-link">Click aqui para quitar mensaje</a>.
+        </div>
+	@endif
+
+	@if($message == 'edit')
+		<div class="alert alert-success" role="alert">
+        Registro modificado exitosamente <a href="/pacientes" class="alert-link">Click aqui para quitar mensaje</a>.
+        </div>
+	@endif
 	<div class="container-fluid">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">

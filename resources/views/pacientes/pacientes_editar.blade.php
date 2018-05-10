@@ -113,7 +113,7 @@
 					<div class="form-row">
 						<div class="col-md-6">
 							{!! Form::label('full_name', 'Médico') !!}
-							{!! Form::select('medico', $medico, null, ['id' => 'medico', 'class' => 'form-control', 'placeholder' => 'Seleccione un Médico']) !!}		
+							{!! Form::select('medico', $medico, $paciente->medico_id, ['id' => 'medico', 'class' => 'form-control', 'placeholder' => 'Seleccione un Médico']) !!}		
 						</div>
 					</div>
 				</div>

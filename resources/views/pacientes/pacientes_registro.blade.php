@@ -99,10 +99,12 @@
 					<div class="card-body">
 						<div class="form-group">
 							<div class="form-row">
-								<div class="col-md-6">
-									{!! Form::label('full_name', 'Médico') !!}
-									{!! Form::select('medico', $medico, null, ['id' => 'medico', 'class' => 'form-control', 'placeholder' => 'Seleccione un Médico']) !!}
-								</div>
+								@if(Auth::User()->tipo_usuario->clave != '05')
+									<div class="col-md-6">
+										{!! Form::label('full_name', 'Médico') !!}
+										{!! Form::select('medico', $medico, null, ['id' => 'medico', 'class' => 'form-control', 'placeholder' => 'Seleccione un Médico']) !!}
+									</div>
+								@endif
 							</div>
 						</div>
 					</div>
