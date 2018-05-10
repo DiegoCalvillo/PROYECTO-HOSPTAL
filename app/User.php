@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(TipoUsuario::class);
     }
+
+    public function estatus()
+    {
+        return $this->belongsTo(Estatus::class, 'estatus_usuario_id');
+    }
 }

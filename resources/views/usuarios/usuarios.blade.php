@@ -46,7 +46,9 @@
 						<tbody>
 							@foreach($users as $users)
 								<tr>
-									<td>{{ $users->username }}</td>
+									<td>
+										<a href="{{ route('usuarios/show', ['id' => $users->id]) }}">{{ $users->username }}</a>
+									</td>
 									<td>{{ $users->name }} {{ $users->ap_paterno }} {{ $users->ap_materno }}</td>
 									<td>{{ $users-> tipo_usuario->tipo_usuario }}</td>
 									<td>

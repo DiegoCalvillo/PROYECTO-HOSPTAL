@@ -28,6 +28,10 @@
 							<table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
 								<tbody>
 									<tr>
+										<th>ID asignado por el sistema</th>
+										<td>{{ $tipo_usuario->id }}</td>
+									</tr>
+									<tr>
 										<th>Tipo de Usuario</th>
 										<td>{{ $tipo_usuario->tipo_usuario }}</td>
 									</tr>

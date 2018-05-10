@@ -270,6 +270,7 @@
   @yield('content_usuarios')
   @yield('content_usuarios_registro')
   @yield('content_usuarios_editar')
+  @yield('content_usuarios_perfil')
   <!-- Tipos de Usuarios -->
   @yield('content_tipo_usuarios')
   @yield('content_tipo_usuarios_registro')

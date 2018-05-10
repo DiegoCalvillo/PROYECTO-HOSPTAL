@@ -73,4 +73,10 @@ class UsuariosController extends Controller
         $users->save();
         return redirect('/usuarios')->with('message', 'edit');
     }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+        return view('usuarios.usuarios_perfil')->with('user', $user);
+    }
 }
