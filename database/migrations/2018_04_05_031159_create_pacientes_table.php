@@ -26,6 +26,7 @@ class CreatePacientesTable extends Migration
             $table->string("numero_casa_paciente")
             $table->string("colonia_paciente");
             $table->string("codigo_postal_paciente");
+            $table->integer('medico_id');
             $table->timestamps();
         });
     }

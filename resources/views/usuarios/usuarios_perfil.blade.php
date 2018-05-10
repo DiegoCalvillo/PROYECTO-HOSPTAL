@@ -93,7 +93,7 @@
 										@if($user->estatus_usuario_id == 0)
 											<td><font color="red"><b>{{ $user->estatus->nombre_estatus }}</b></font></td>
 										@else
-											<td>{{ $user->estatus->nombre_estatus->nombre_estatus }}</td>
+											<td>{{ $user->estatus->nombre_estatus }}</td>
 										@endif
 									</tr>
 								</tbody>

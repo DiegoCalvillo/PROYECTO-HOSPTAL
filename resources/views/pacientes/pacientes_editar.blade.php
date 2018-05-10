@@ -105,6 +105,19 @@
 					</div>
 				</div>
 			</div>
+			<div class="card-header">
+				<b>Historial Medico (Opcional)</b>
+			</div>
+			<div class="card-body">
+				<div class="form-group">
+					<div class="form-row">
+						<div class="col-md-6">
+							{!! Form::label('full_name', 'Médico') !!}
+							{!! Form::select('medico', $medico, null, ['id' => 'medico', 'class' => 'form-control', 'placeholder' => 'Seleccione un Médico']) !!}		
+						</div>
+					</div>
+				</div>
+			</div>
 			<button class="btn btn-primary" type="submit">Guardar Cambios</button>
 		</div>
 	</div>

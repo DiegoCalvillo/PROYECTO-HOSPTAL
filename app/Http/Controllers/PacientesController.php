@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Hospital\pacientes as pacientes;
 use Hospital\EstadosPais as EstadosPais;
 use Hospital\Municipios as Municipios;
+use Hospital\User as User;
+use Hospital\TipoUsuario as TipoUsuario;
 use Hospital\Http\Requests\PacientesRequest;
 use JavaScript;
 
@@ -25,7 +27,9 @@ class PacientesController extends Controller
     public function create()
     {
     	$estados = EstadosPais::pluck('nombre_estado', 'id');
-    	return view('pacientes.pacientes_registro', compact('estados'));
+        $tipo_usuario_medico = TipoUsuario::where('clave', '=', '05')->get();
+        $medico = User::where('tipo_usuario_id', '=', $tipo_usuario_medico[0]->id)->pluck('name', 'id');
+    	return view('pacientes.pacientes_registro', compact('estados'))->with('medico', $medico);
     }
 
     public function store(PacientesRequest $request)
@@ -41,6 +45,7 @@ class PacientesController extends Controller
         $pacientes->email = $request->email;
         $pacientes->colonia_paciente = $request->colonia_paciente;
         $pacientes->numero_casa_paciente = $request->numero_casa_paciente;
+        $pacientes->medico_id = $request->medico
         $pacientes->save();
         return redirect('/pacientes');
     }
@@ -50,7 +55,9 @@ class PacientesController extends Controller
         $paciente = pacientes::find($id);
         $estados = EstadosPais::pluck('nombre_estado', 'id');
         $municipios = Municipios::where('id', '=', $paciente->municipio_paciente)->get();
-        return view('pacientes.pacientes_editar', compact('paciente'))->with('estados', $estados)->with('municipios', $municipios);
+        $tipo_usuario_medico = TipoUsuario::where('clave', '=', '05')->get();
+        $medico = User::where('tipo_usuario_id', '=', $tipo_usuario_medico[0]->id)->pluck('name', 'id');
+        return view('pacientes.pacientes_editar', compact('paciente'))->with('estados', $estados)->with('municipios', $municipios)->with('medico', $medico);
     }
 
     public function show($id)
