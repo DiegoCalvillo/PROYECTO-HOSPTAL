@@ -26,6 +26,7 @@ Route::post('usuarios/store', 'UsuariosController@store');
 Route::get('usuarios/{id}/edit', ['as' => 'usuarios/edit', 'uses' => 'UsuariosController@edit']);
 Route::put('usuarios/update', ['as' => 'usuarios/update', 'uses' => 'UsuariosController@update']);
 Route::get('usuarios/{id}', ['as' => 'usuarios/show', 'uses' => 'UsuariosController@show']);
+Route::post('usuarios/search', ['as' => 'usuarios/search', 'uses' => 'UsuariosController@search']);
 
 /*Rutas de TipoUsuariosController*/
 Route::resource('/tipo_usuarios', 'TipoUsuariosController');

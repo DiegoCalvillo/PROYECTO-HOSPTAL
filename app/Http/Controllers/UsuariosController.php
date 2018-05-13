@@ -22,7 +22,8 @@ class UsuariosController extends Controller
     public function index()
     {
     	$users = User::where('id', '!=', Auth::User()->id)->get();
-    	return view('usuarios.usuarios')->with('users', $users);
+        $tipo_usuario = TipoUsuario::where('estatus_id', '=', 1)->pluck('tipo_usuario', 'id');
+    	return view('usuarios.usuarios')->with('users', $users)->with('tipo_usuario', $tipo_usuario);
     }
 
     public function create()
@@ -78,5 +79,12 @@ class UsuariosController extends Controller
     {
         $user = User::find($id);
         return view('usuarios.usuarios_perfil')->with('user', $user);
+    }
+
+    public function search(Request $request)
+    {
+        $users = User::where('tipo_usuario_id', '=', $request->tipo_usuario)->get();
+        $tipo_usuario = TipoUsuario::where('estatus_id', '=', 1)->pluck('tipo_usuario', 'id');
+        return view('usuarios.usuarios', compact('users'))->with('tipo_usuario', $tipo_usuario)->with('message', 'search');
     }
 }
