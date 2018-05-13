@@ -72,7 +72,7 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+        <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Charts</span>
@@ -154,7 +154,7 @@
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Link</span>
           </a>
-        </li>
+        </li>-->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">

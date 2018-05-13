@@ -34,7 +34,7 @@ class PacientesController extends Controller
     {
     	$estados = EstadosPais::pluck('nombre_estado', 'id');
         $tipo_usuario_medico = TipoUsuario::where('clave', '=', '05')->get();
-        $medico = User::where('tipo_usuario_id', '=', $tipo_usuario_medico[0]->id)->pluck('name', 'id');
+        $medico = User::where('tipo_usuario_id', '=', $tipo_usuario_medico[0]->id)->where('estatus_usuario_id', '=', 1)->pluck('name', 'id');
     	return view('pacientes.pacientes_registro', compact('estados'))->with('medico', $medico);
     }
 
@@ -67,7 +67,7 @@ class PacientesController extends Controller
         $estados = EstadosPais::pluck('nombre_estado', 'id');
         $municipios = Municipios::where('id', '=', $paciente->municipio_paciente)->get();
         $tipo_usuario_medico = TipoUsuario::where('clave', '=', '05')->get();
-        $medico = User::where('tipo_usuario_id', '=', $tipo_usuario_medico[0]->id)->pluck('name', 'id');
+        $medico = User::where('tipo_usuario_id', '=', $tipo_usuario_medico[0]->id)->where('estatus_usuario_id', '=', 1)->pluck('name', 'id');
         return view('pacientes.pacientes_editar', compact('paciente'))->with('estados', $estados)->with('municipios', $municipios)->with('medico', $medico);
     }
 
