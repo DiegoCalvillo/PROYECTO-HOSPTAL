@@ -65,10 +65,14 @@ class UsuariosController extends Controller
         $users->ap_materno = $request->ap_materno;
         $users->email = $request->email;
         $users->tipo_usuario_id = $request->tipo_usuario;
-        $users->estatus_usuario_id = $request->estatus_usuario;
+        if($request->estatus_usuario == 1) {
+            $users->estatus_usuario_id = $request->estatus_usuario;
+            $users->num_intentos = 0;
+        } else {
+            $users->estatus_usuario_id = $request->estatus_usuario;
+        }
         $users->username = $request->username;
-        if($request->password != "")
-        {
+        if($request->password != "") {
             $users->password = bcrypt($request->password);
         }
         $users->save();

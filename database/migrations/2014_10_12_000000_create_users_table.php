@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('estatus_usuario_id');
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('num_intentos');
             $table->rememberToken();
             $table->timestamps();
         });
