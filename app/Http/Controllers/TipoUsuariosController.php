@@ -34,7 +34,7 @@ class TipoUsuariosController extends Controller
     	$tipos_usuarios->estatus_id = $request->estatus_id;
         $tipos_usuarios->clave = $request->clave;
     	$tipos_usuarios->save();
-    	return redirect('/tipo_usuarios');
+    	return redirect('/tipo_usuarios')->with('message', 'store');
     }
 
     public function edit($id)
@@ -52,12 +52,18 @@ class TipoUsuariosController extends Controller
         $tipos_usuarios->estatus_id = $request->estatus_id;
         $tipos_usuarios->clave = $request->clave;
         $tipos_usuarios->save();
-        return redirect('/tipo_usuarios');
+        return redirect('/tipo_usuarios')->with('message', 'edit');
     }
 
     public function show($id)
     {
         $tipo_usuario = TipoUsuario::find($id);
         return view('tipos_usuarios.tipos_usuarios_perfil')->with('tipo_usuario', $tipo_usuario);
+    }
+
+    public function search(Request $request)
+    {
+        $tipos_usuarios = TipoUsuario::where('tipo_usuario', 'like', '%'.$request-> tipo_usuario.'%')->get();
+        return view('tipos_usuarios.tipos_usuarios', compact('tipos_usuarios'));
     }
 }

@@ -2,13 +2,27 @@
 
 @section('content_tipo_usuarios')
 <div class="content-wrapper">
-	<div class="container-fluid">
+	<form method="POST" action="http://192.168.1.66:8080/tipo_usuarios/search">
+		<div class="container-fluid">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">
 				<a href="/">Inicio</a>
 			</li>
 			<li class="breadcrumb-item active">Tipos de Usuarios</li>
 		</ol>
+		<?php $message=Session::get('message') ?>
+
+			@if($message == 'store')
+				<div class="alert alert-success" role="alert">
+        		Registro creado exitosamente <a href="/tipo_usuarios" class="alert-link">Click aqui para quitar mensaje</a>.
+        		</div>
+			@endif
+
+			@if($message == 'edit')
+				<div class="alert alert-success" role="alert">
+        		Registro modificado exitosamente <a href="/tipo_usuarios" class="alert-link">Click aqui para quitar mensaje</a>.
+        		</div>
+			@endif
 		<div class="row">
 			<div class="col-6">
 				<h1>Tipos de Usuarios</h1>
@@ -21,6 +35,16 @@
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
+					<div class="row">
+						<div class="col-4">
+							<b>Buscar por nombre: </b> {!! Form::text('tipo_usuario', null, ['class' => 'form-control', 'placeholder' => 'Por Tipo de Usuario']) !!}
+						</div>
+						<div>
+							<br>
+							<button class="btn btn-primary" type="submit">Buscar</button>
+						</div>
+					</div>
+					<br>
 					<table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
 						<thead>
 							<tr>
@@ -45,6 +69,11 @@
 							@endforeach
 						</tbody>
 					</table>
+					@if($tipos_usuarios->count() == 0)
+						<div class="alert alert-danger" role="alert">
+							No se han encontrado resultados
+						</div>
+					@endif
 					<div class="col-4">
 						<a class="btn btn-primary btn-block" href="tipo_usuarios/create">Crear Nuevo</a>
 					</div>
@@ -52,5 +81,6 @@
 			</div>
 		</div>
 	</div>
+	</form>
 </div>
 @stop

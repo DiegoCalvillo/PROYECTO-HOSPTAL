@@ -55,15 +55,15 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($users as $users)
+							@foreach($users as $user)
 								<tr>
 									<td>
-										<a href="{{ route('usuarios/show', ['id' => $users->id]) }}">{{ $users->username }}</a>
+										<a href="{{ route('usuarios/show', ['id' => $user->id]) }}">{{ $user->username }}</a>
 									</td>
-									<td>{{ $users->name }} {{ $users->ap_paterno }} {{ $users->ap_materno }}</td>
-									<td>{{ $users-> tipo_usuario->tipo_usuario }}</td>
+									<td>{{ $user->name }} {{ $user->ap_paterno }} {{ $user->ap_materno }}</td>
+									<td>{{ $user-> tipo_usuario->tipo_usuario }}</td>
 									<td>
-										<a class="glyphicon glyphicon-pencil" title="Editar" href="{{ route('usuarios/edit', ['id' => $users->id] )}}"><i class="fa fa-fw fa-pencil"></i></a>
+										<a class="glyphicon glyphicon-pencil" title="Editar" href="{{ route('usuarios/edit', ['id' => $user->id] )}}"><i class="fa fa-fw fa-pencil"></i></a>
 									</td>
 								</tr>
 							@endforeach
