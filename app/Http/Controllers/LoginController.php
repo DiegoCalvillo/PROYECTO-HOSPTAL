@@ -32,16 +32,15 @@ class LoginController extends Controller
         else
         {
             $attempt_user = User::where('username', '=', $request['username'])->get();
+            $user = User::find($attempt_user[0]->id);
             if($attempt_user[0]->num_intentos == 0) {
-                $user = User::find($attempt_user[0]->id);
                 $user->num_intentos = 1;
                 $user->save();
                 Session::flash('message-error', 'Acceso denegado');
             } else {
-                $user = User::find($attempt_user[0]->id);
                 $num_intentos = $attempt_user[0]->num_intentos;
                 $user->num_intentos = $num_intentos + 1;
-                if($user->num_intentos == 3) {
+                if($user->num_intentos >= 3) {
                     $user->estatus_usuario_id = 0;
                     $user->save();
                     Session::flash('message-error', 'Han sido 3 intentos. Cuenta Bloqueada');

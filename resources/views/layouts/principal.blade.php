@@ -54,6 +54,22 @@
             </ul>
           </li>
         @endif
+        @if(Auth::User()->tipo_usuario->clave == "02")
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Doctors">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMedicos">
+              <i class="fa fa-fw fa-circle"></i>
+              <span class="nav-link-text">Consulta de Personal</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseMedicos">
+              <li>
+                <a href="/medicos">Médicos</a>
+              </li>
+              <li>
+                <a href="">Enfermeros</a>
+              </li>
+            </ul>
+          </li>
+        @endif
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pacientes">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePacientes" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-users"></i>
@@ -285,6 +301,8 @@
   @yield('content_pacientes_registro')
   @yield('content_pacientes_editar')
   @yield('content_pacientes_perfil')
+  <!--Medicos-->
+  @yield('content_medicos')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">

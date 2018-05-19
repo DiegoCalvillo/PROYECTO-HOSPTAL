@@ -36,4 +36,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Estatus::class, 'estatus_usuario_id');
     }
+
+    public static function medicos($id)
+    {
+        return User::where('tipo_usuario_id', '=', $id)->get();
+    }
 }
