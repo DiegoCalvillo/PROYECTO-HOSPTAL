@@ -23,11 +23,18 @@ class LoginController extends Controller
     	if(Auth::attempt(['username' => $request['username'], 'password' => $request['password']]))
     	{
     		if(Auth::user()->estatus_usuario_id == 0)
-    			{
-    				Session::flash('message-error', 'Cuenta de Usuario Bloqueada');
-    				return Redirect::to('/login');
-    			}
-    			return Redirect::to('/');
+    		{
+    			Session::flash('message-error', 'Cuenta de Usuario Bloqueada');
+    			return Redirect::to('/login');
+    		}
+            if(Auth()->user()->num_intentos > 0)
+            {
+                $attempt_user = User::where('username', '=', $request['username'])->get();
+                $user = User::find($attempt_user[0]->id);
+                $user->num_intentos = 0;
+                $user->save();
+            }
+    		return Redirect::to('/');
     	}
         else
         {
