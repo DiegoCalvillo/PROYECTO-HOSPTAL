@@ -103,6 +103,11 @@
 									</tr>
 								</tbody>
 							</table>
+							@if(empty($paciente->expediente))
+								<div class="col-6">
+									<a class="btn btn-primary btn-block" href="{{ route('expediente/create', ['id' => $paciente->id]) }}">Crear expediente médico</a>
+								</div>
+							@endif
 						</div>
 					</div>
 				</div>

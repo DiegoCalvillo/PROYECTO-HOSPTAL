@@ -56,4 +56,7 @@ Route::get('pacientes/{id}/edit', ['as' => 'pacientes/edit', 'uses' => 'Paciente
 Route::put('pacientes/update', ['as' => 'pacientes/update', 'uses' => 'PacientesController@update']);
 Route::get('pacientes/{id}', ['as' => 'pacientes/show', 'uses' => 'PacientesController@show']);
 
+/*Rutas de ExpedienteMedicoController*/
+Route::get('expediente/{id}/create', ['as' => 'expediente/create', 'uses' => 'ExpedienteMedicoController@create']);
+
 Auth::routes();

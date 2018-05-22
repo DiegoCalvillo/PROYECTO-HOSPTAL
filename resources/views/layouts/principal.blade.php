@@ -303,6 +303,8 @@
   @yield('content_pacientes_perfil')
   <!--Medicos-->
   @yield('content_medicos')
+  <!--Expedientes-->
+  @yield('content_expediente_medico')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
