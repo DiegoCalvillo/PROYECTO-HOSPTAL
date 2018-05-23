@@ -2,7 +2,7 @@
 
 @section('content_tipo_usuarios')
 <div class="content-wrapper">
-	<form method="POST" action="http://192.168.1.66:8080/tipo_usuarios/search">
+	<form method="POST" action="http://192.168.1.71:8080/tipo_usuarios/search">
 		<div class="container-fluid">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">

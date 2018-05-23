@@ -12,7 +12,8 @@
 			</li>
 		</ol>
 		<div class="container">
-			<form>
+			<form method="POST" action="http://192.168.1.71:8080/expediente/store">
+			{{ Form::hidden('id', $paciente->id) }}
 				<div class="card-header">
 					<b>Datos de Consultorio</b>
 				</div>
@@ -37,7 +38,24 @@
 							</div>
 						</div>
 					</div>
+					<div class="form-group">
+						<div class="form-row">
+							<div class="col-md-6">
+								{{ Form::label('full_name', 'Padecimiento') }}
+								{{ Form::select('padecimiento', $padecimiento, null, ['class' => 'form-control', 'placeholder' => 'Seleccione']) }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row">
+							<div class="col-md-12">
+								{{ Form::label('full_name', 'Observaciones') }}
+								{{ Form::textarea('observaciones', null, ['class' => 'form-control']) }}
+							</div>
+						</div>
+					</div>
 				</div>
+				<button class="btn btn-primary" type="submit">Guardar</button>
 			</form>
 		</div>
 	</div>

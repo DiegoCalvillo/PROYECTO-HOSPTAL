@@ -11,7 +11,7 @@
 				<a href="/pacientes">Pacientes</a>
 			</li>
 			<li class="breadcrumb-item active">
-				{{ $paciente->nombre_paciente }} {{ $paciente->ap_paterno }} {{ $paciente->ap_materno }}
+				<b>{{ $paciente->nombre_paciente }} {{ $paciente->ap_paterno }} {{ $paciente->ap_materno }}</b>
 			</li>
 		</ol>
 		<form>
@@ -107,6 +107,17 @@
 								<div class="col-6">
 									<a class="btn btn-primary btn-block" href="{{ route('expediente/create', ['id' => $paciente->id]) }}">Crear expediente médico</a>
 								</div>
+							@else
+								<table class="table table-bordered" id="dataTable" width="100%", cellpadding="0">
+									<tbody>
+										<tr>
+											<th>Estatura</th>
+											<td>{{ $expediente->estatura }}</td>
+											<th>Peso</th>
+											<td>{{ $expediente->peso }}</td>
+										</tr>
+									</tbody>
+								</table>
 							@endif
 						</div>
 					</div>

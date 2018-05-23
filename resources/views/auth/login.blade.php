@@ -23,7 +23,7 @@
       <div class="card-body">
         @include('alerts.errors')
         @include('alerts.request')
-        <form method="POST" action="http://192.168.1.66:8080/login/store">
+        <form method="POST" action="http://192.168.1.71:8080/login/store">
           <div class="form-group">
             <label for="exampleInputEmail1">Usuario</label>
             <input name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de Usuario">

@@ -14,7 +14,7 @@
 		</ol>
 		@include('alerts.request')
 		<div class="container">
-			<form method="POST" action="http://192.168.1.66:8080/usuarios/store">
+			<form method="POST" action="http://192.168.1.71:8080/usuarios/store">
 					<div class="card-header">
 						<b>Información General</b>
 					</div>

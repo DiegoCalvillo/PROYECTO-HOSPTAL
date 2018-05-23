@@ -58,5 +58,6 @@ Route::get('pacientes/{id}', ['as' => 'pacientes/show', 'uses' => 'PacientesCont
 
 /*Rutas de ExpedienteMedicoController*/
 Route::get('expediente/{id}/create', ['as' => 'expediente/create', 'uses' => 'ExpedienteMedicoController@create']);
+Route::post('expediente/store', 'ExpedienteMedicoController@store');
 
 Auth::routes();

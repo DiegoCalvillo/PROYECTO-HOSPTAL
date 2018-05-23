@@ -8,6 +8,7 @@ use Hospital\EstadosPais as EstadosPais;
 use Hospital\Municipios as Municipios;
 use Hospital\User as User;
 use Hospital\TipoUsuario as TipoUsuario;
+use Hospital\ExpedienteClinico as ExpedienteClinico;
 use Auth;
 use Hospital\Http\Requests\PacientesRequest;
 use JavaScript;
@@ -74,7 +75,8 @@ class PacientesController extends Controller
     public function show($id)
     {
         $paciente = pacientes::find($id);
-        return view('pacientes.pacientes_perfil')->with('paciente', $paciente);
+        $expediente = ExpedienteClinico::find($paciente->expediente_id);
+        return view('pacientes.pacientes_perfil')->with('paciente', $paciente)->with('expediente', $expediente);
     }
 
     public function update(Request $request)

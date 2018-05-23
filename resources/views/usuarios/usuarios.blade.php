@@ -2,7 +2,7 @@
 
 @section('content_usuarios')
 <div class="content-wrapper">
-	<form method="POST" action="http://192.168.1.66:8080/usuarios/search">
+	<form method="POST" action="http://192.168.1.71:8080/usuarios/search">
 		<div class="container-fluid">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">
@@ -75,7 +75,7 @@
 						</div>
 					@endif
 					<div class="col-4">
-						<a class="btn btn-primary btn-block" href="http://192.168.1.66:8080/usuarios/create">Crear Nuevo</a>
+						<a class="btn btn-primary btn-block" href="http://192.168.1.71:8080/usuarios/create">Crear Nuevo</a>
 					</div>
 				</div>
 			</div>

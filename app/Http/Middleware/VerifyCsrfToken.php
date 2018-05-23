@@ -18,5 +18,6 @@ class VerifyCsrfToken extends BaseVerifier
         'pacientes/store',
         'usuarios/search',
         'tipo_usuarios/search',
+        'expediente/store',
     ];
 }
