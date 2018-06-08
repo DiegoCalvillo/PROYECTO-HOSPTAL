@@ -2,7 +2,7 @@
 
 @section('content_tipo_usuarios')
 <div class="content-wrapper">
-	<form method="POST" action="http://192.168.1.71:8080/tipo_usuarios/search">
+	{!! Form::open(['route' => 'tipo_usuarios/search', 'method' => 'POST']) !!}
 		<div class="container-fluid">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">
@@ -75,12 +75,12 @@
 						</div>
 					@endif
 					<div class="col-4">
-						<a class="btn btn-primary btn-block" href="tipo_usuarios/create">Crear Nuevo</a>
+						<a class="btn btn-primary btn-block" href="{{ url('tipo_usuarios/create') }}">Crear Nuevo</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</form>
+	{!! Form::close() !!}
 </div>
 @stop

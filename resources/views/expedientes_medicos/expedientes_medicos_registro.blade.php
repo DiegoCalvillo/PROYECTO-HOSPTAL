@@ -12,7 +12,7 @@
 			</li>
 		</ol>
 		<div class="container">
-			<form method="POST" action="http://192.168.1.71:8080/expediente/store">
+			<form method="POST" action="http://192.168.1.66:8080/expediente/store">
 			{{ Form::hidden('id', $paciente->id) }}
 				<div class="card-header">
 					<b>Datos de Consultorio</b>

@@ -46,10 +46,10 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseUsers">
               <li>
-                <a href="http://192.168.1.71:8080/usuarios">Usuarios</a>
+                <a href="{{ url('/usuarios') }}">Usuarios</a>
               </li>
               <li>
-                <a href="http://192.168.1.71:8080/tipo_usuarios">Tipos de Usuario</a>
+                <a href="{{ url('/tipo_usuarios') }}">Tipos de Usuario</a>
               </li>
             </ul>
           </li>
@@ -81,10 +81,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapsePacientes">
             <li>
-              <a href="http://192.168.1.71:8080/pacientes">Lista de Pacientes</a>
+              <a href="{{ url('/pacientes') }}">Lista de Pacientes</a>
             </li>
             <li>
-              <a href="http://192.168.1.71:8080/pacientes/create">Registrar Nuevo Paciente</a>
+              <a href="{{ url('pacientes/create') }}">Registrar Nuevo Paciente</a>
             </li>
           </ul>
         </li>
@@ -181,8 +181,13 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <h5>
+          <h6>
             <a class="navbar-brand" href="#">Cuenta de: {{ Auth::User()->tipo_usuario->tipo_usuario }}</a>
+          </h6>
+        </li>
+        <li class="nav-item">
+          <h5>
+            <a class="navbar-brand" href="#">Bienvenido: {{ Auth::User()->name }} {{ Auth::User()->ap_paterno }}</a>
           </h5>
         </li>
       </ul>
@@ -277,8 +282,8 @@
           </form>-->
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/logout">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+          <a class="nav-link" href="{{ url('/logout') }}">
+            <i class="fa fa-fw fa-sign-out"></i>Cerrar Sesión</a>
         </li>
       </ul>
     </div>

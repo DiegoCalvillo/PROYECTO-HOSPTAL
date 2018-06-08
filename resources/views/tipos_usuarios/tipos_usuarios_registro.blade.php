@@ -14,7 +14,7 @@
 		</ol>
 		@include('alerts.request')
 		<div class="container">
-			<form method="POST" action="http://192.168.1.71:8080/tipo_usuarios/store">
+			{!! Form::open(['route' => 'tipo_usuarios/store', 'method' => 'POST']) !!}
 				<div class="card-header">
 					<b>Información de Registro</b>
 				</div>
@@ -42,7 +42,7 @@
 					</div>
 				</div>
 				<button class="btn btn-primary" type="submit">Grabar</button>
-			</form>
+			{!! Form::close() !!}
 		</div>
 	</div>
 </div>

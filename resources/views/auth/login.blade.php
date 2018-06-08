@@ -23,10 +23,10 @@
       <div class="card-body">
         @include('alerts.errors')
         @include('alerts.request')
-        <form method="POST" action="http://192.168.1.71:8080/login/store">
+        {!! Form::open(['route' => 'login/store', 'method' => 'POST', 'novalidate']) !!}
           <div class="form-group">
             <label for="exampleInputEmail1">Usuario</label>
-            <input name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre de Usuario">
+            <input name="username" class="form-control" placeholder="Nombre de Usuario">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Contraseña</label>
@@ -34,7 +34,7 @@
           </div>
           <!--<a class="btn btn-primary btn-block" href="index.html">Login</a>-->
           <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
-        </form>
+        {!! Form::close() !!}
       </div>
     </div>
   </div>

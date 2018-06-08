@@ -22,7 +22,7 @@ Route::get('/tables', 'PrincipalController@tables');
 /*Rutas de UsuariosController*/
 Route::resource('/usuarios', 'UsuariosController');
 Route::get('usuarios/create', 'UsuariosController@create');
-Route::post('usuarios/store', 'UsuariosController@store');
+Route::post('usuarios/store', ['as' => 'usuarios/store', 'uses' => 'UsuariosController@store']);
 Route::get('usuarios/{id}/edit', ['as' => 'usuarios/edit', 'uses' => 'UsuariosController@edit']);
 Route::put('usuarios/update', ['as' => 'usuarios/update', 'uses' => 'UsuariosController@update']);
 Route::get('usuarios/{id}', ['as' => 'usuarios/show', 'uses' => 'UsuariosController@show']);
@@ -31,7 +31,7 @@ Route::post('usuarios/search', ['as' => 'usuarios/search', 'uses' => 'UsuariosCo
 /*Rutas de TipoUsuariosController*/
 Route::resource('/tipo_usuarios', 'TipoUsuariosController');
 Route::get('tipo_usuarios/create', 'TipoUsuariosController@create');
-Route::post('tipo_usuarios/store', 'TipoUsuariosController@store');
+Route::post('tipo_usuarios/store', ['as' => 'tipo_usuarios/store', 'uses' => 'TipoUsuariosController@store']);
 Route::get('tipo_usuarios/{id}/edit', ['as' => 'tipo_usuarios/edit', 'uses' => 'TipoUsuariosController@edit']);
 Route::put('tipo_usuarios/update', ['as' => 'tipo_usuarios/update', 'uses' => 'TipoUsuariosController@update']);
 Route::get('tipo_usuarios/{id}', ['as' => 'tipo_usuarios/show', 'uses' => 'TipoUsuariosController@show']);
@@ -45,7 +45,7 @@ Route::get('municipios/{id}', 'EstadosMunicipiosController@getMunicipios');
 
 /*Rutas de LoginController*/
 Route::resource('/login', 'LoginController');
-Route::post('login/store', 'LoginController@store');
+Route::post('login/store', ['as' => 'login/store', 'uses' => 'LoginController@store']);
 Route::get('logout', 'LoginController@logout');
 
 /*Rutas para PacientesController*/

@@ -12,8 +12,8 @@ class MunicipiosSeeder extends Seeder
     public function run()
     {
         DB::table('municipios')->insert([
-        	'nombre_municipio' => 'Zaragoza',
-        	'estado_id' => 8,
+        	'nombre_municipio' => 'Villa de Alvarez',
+        	'estado_id' => 9,
         	'created_at' => date('Y-m-d H:m:s'),
         	'updated_at' => date('Y-m-d H:m:s'),
         ]);
