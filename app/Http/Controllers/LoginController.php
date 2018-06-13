@@ -7,6 +7,7 @@ use Auth;
 use Session;
 use Redirect;
 use Hospital\User as User;
+use Hospital\Configuraciones as Configuraciones;
 use Hospital\Http\Requests;
 use Hospital\Http\Requests\LoginRequest;
 use Hospital\Http\Controllers\Controller;
@@ -46,11 +47,12 @@ class LoginController extends Controller
                 Session::flash('message-error', 'Acceso denegado');
             } else {
                 $num_intentos = $attempt_user[0]->num_intentos;
+                $intentos_login = Configuraciones::where('nombre_configuracion', '=', 'Numero de Intentos')->get();
                 $user->num_intentos = $num_intentos + 1;
-                if($user->num_intentos >= 3) {
+                if($user->num_intentos >= $intentos_login[0]->valor) {
                     $user->estatus_usuario_id = 0;
                     $user->save();
-                    Session::flash('message-error', 'Han sido 3 intentos. Cuenta Bloqueada');
+                    Session::flash('message-error', 'Has superado la cantidad intentos permitidos. Cuenta Bloqueada');
                 } else {
                     $user->save();
                     Session::flash('message-error', 'Acceso denegado');

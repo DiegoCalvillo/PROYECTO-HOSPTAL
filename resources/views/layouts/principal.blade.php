@@ -88,6 +88,14 @@
             </li>
           </ul>
         </li>
+        @if(Auth::User()->tipo_usuario->clave == "01")
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Configuracion">
+            <a class="nav-link" href="{{ url('/configuracion') }}">
+              <i class="fa fa-fw fa-link"></i>
+              <span class="nav-link-text">Configuración</span>
+            </a>
+          </li>
+        @endif
         <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
             <i class="fa fa-fw fa-area-chart"></i>
@@ -180,11 +188,6 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <h6>
-            <a class="navbar-brand" href="#">Cuenta de: {{ Auth::User()->tipo_usuario->tipo_usuario }}</a>
-          </h6>
-        </li>
         <li class="nav-item">
           <h5>
             <a class="navbar-brand" href="#">Bienvenido: {{ Auth::User()->name }} {{ Auth::User()->ap_paterno }}</a>
@@ -283,7 +286,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('/logout') }}">
-            <i class="fa fa-fw fa-sign-out"></i>Cerrar Sesión</a>
+            <i class="fa fa-fw fa-sign-out"></i>Salir</a>
         </li>
       </ul>
     </div>
@@ -310,6 +313,9 @@
   @yield('content_medicos')
   <!--Expedientes-->
   @yield('content_expediente_medico')
+  <!--Configuracion-->
+  @yield('content_configuracion')
+  @yield('content_configuracion_editar')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">

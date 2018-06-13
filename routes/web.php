@@ -60,4 +60,9 @@ Route::get('pacientes/{id}', ['as' => 'pacientes/show', 'uses' => 'PacientesCont
 Route::get('expediente/{id}/create', ['as' => 'expediente/create', 'uses' => 'ExpedienteMedicoController@create']);
 Route::post('expediente/store', 'ExpedienteMedicoController@store');
 
+/*Rutas de ConfiguracionController*/
+Route::resource('/configuracion', 'ConfiguracionController');
+Route::get('configuracion/{id}/edit', ['as' => 'configuracion/edit', 'uses' => 'ConfiguracionController@edit']);
+Route::put('configuracion/update', ['as' => 'configuracion/update', 'uses' => 'ConfiguracionController@update']);
+
 Auth::routes();
