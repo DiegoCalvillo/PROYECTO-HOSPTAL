@@ -47,9 +47,9 @@ class LoginController extends Controller
                 Session::flash('message-error', 'Acceso denegado');
             } else {
                 $num_intentos = $attempt_user[0]->num_intentos;
-                $intentos_login = Configuraciones::where('nombre_configuracion', '=', 'Numero de Intentos')->get();
+                $intentos_login = Configuraciones::numero_intentos()->valor;
                 $user->num_intentos = $num_intentos + 1;
-                if($user->num_intentos >= $intentos_login[0]->valor) {
+                if($user->num_intentos >= $intentos_login) {
                     $user->estatus_usuario_id = 0;
                     $user->save();
                     Session::flash('message-error', 'Has superado la cantidad intentos permitidos. Cuenta Bloqueada');
