@@ -16,6 +16,24 @@
           <h1>{{ Auth::User()->tipo_usuario->tipo_usuario }}</h1>
         </div>
       </div>
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-3">
+          <div class="card text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+              <div class="card-body-icon">
+                <i class="fa fa-fw fa-user"></i>
+              </div> 
+              <div class="mr-5">Perfil</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="{{ route('usuarios/show', ['id' => Auth::User()->id]) }}">
+              <span class="float-left">Ir a tu perfil</span>
+              <span class="float-right">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
       <!-- Icon Cards
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">

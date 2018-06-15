@@ -2,6 +2,8 @@
 
 @section('content_usuarios_perfil')
 <div class="content-wrapper">
+	{!! Form::open(['route' => 'usuarios/cambiar_foto', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+	{!! Form::hidden('id', $user->id) !!}
 	<div class="container-fluid">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">
@@ -17,11 +19,8 @@
 		<form>
 			{!! Form::hidden('id', $user->id) !!}
 			<div class="row">
-				<div class="col-6">
+				<div class="col-7">
 					<h3>Información General</h3>
-				</div>
-				<div class="col-6">
-					<h3>Espacio Reservado para foto</h3>
 				</div>
 			</div>
 			<div class="row">
@@ -46,6 +45,13 @@
 							</table>
 						</div>
 					</div>
+				</div>
+				<div class="col-6">
+					<img class="rounded-circle img-fluid d-block mx-auto" width="40%" src="{!! asset($user->ruta_foto_perfil) !!}">
+					@if(Auth::User()->id == $user->id)
+						<input size="20" type="file" class="form-control" name="file" id="file">
+						<button type="submit" class="btn btn-primary">Cambiar foto</button>
+					@endif
 				</div>
 			</div>
 			<div class="row">

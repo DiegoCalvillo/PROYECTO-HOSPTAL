@@ -27,6 +27,7 @@ Route::get('usuarios/{id}/edit', ['as' => 'usuarios/edit', 'uses' => 'UsuariosCo
 Route::put('usuarios/update', ['as' => 'usuarios/update', 'uses' => 'UsuariosController@update']);
 Route::get('usuarios/{id}', ['as' => 'usuarios/show', 'uses' => 'UsuariosController@show']);
 Route::post('usuarios/search', ['as' => 'usuarios/search', 'uses' => 'UsuariosController@search']);
+Route::post('usuarios/cambiar_foto', ['as' => 'usuarios/cambiar_foto', 'uses' => 'UsuariosController@cambiar_foto']);
 
 /*Rutas de TipoUsuariosController*/
 Route::resource('/tipo_usuarios', 'TipoUsuariosController');

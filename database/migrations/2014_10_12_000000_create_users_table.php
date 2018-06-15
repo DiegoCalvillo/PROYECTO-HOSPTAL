@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('num_intentos');
+            $table->string('ruta_foto_perfil');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ class UsuariosController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('admin');
+        $this->middleware('admin', ['only' => ['create', 'index', 'edit']]);
     }
 
     public function index()
@@ -90,5 +90,17 @@ class UsuariosController extends Controller
         $users = User::where('tipo_usuario_id', '=', $request->tipo_usuario)->get();
         $tipo_usuario = TipoUsuario::where('estatus_id', '=', 1)->pluck('tipo_usuario', 'id');
         return view('usuarios.usuarios', compact('users'))->with('tipo_usuario', $tipo_usuario)->with('message', 'search');
+    }
+
+    public function cambiar_foto(Request $request)
+    {
+        $user_id = Auth::User()->id;
+        $users = User::find($request->id);
+        $file = $request->file('file');
+        $foto_perfil = $file->getClientOriginalName();
+        \Storage::disk('local')->put($foto_perfil, \File::get($file));
+        $users->ruta_foto_perfil = "imagenes/fotos_perfil/".$foto_perfil;
+        $users->save();
+        return redirect('/usuarios/'.$user_id);   
     }
 }
