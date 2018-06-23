@@ -9,6 +9,7 @@ use Hospital\EstatusUsuario as EstatusUsuario;
 use Hospital\Http\Requests\UsuariosRegistroRequest;
 use Hospital\Http\Requests\UsuariosEditarRequest;
 use Auth;
+use Session;
 
 class UsuariosController extends Controller
 {
@@ -82,7 +83,12 @@ class UsuariosController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('usuarios.usuarios_perfil')->with('user', $user);
+        if(Auth::User()->id != $user->id && Auth::User()->tipo_usuario->clave != '01') {
+            Session::flash('message-error', 'Lo sentimos, pero no tienes privilegios de administrador');
+            return redirect('/usuarios/'.Auth::User()->id);
+        } else {
+            return view('usuarios.usuarios_perfil')->with('user', $user);
+        }
     }
 
     public function search(Request $request)

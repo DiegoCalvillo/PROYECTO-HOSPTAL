@@ -18,6 +18,7 @@
 		</ol>
 		<form>
 			{!! Form::hidden('id', $user->id) !!}
+			@include('alerts.errors')
 			<div class="row">
 				<div class="col-7">
 					<h3>Información General</h3>
