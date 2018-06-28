@@ -17,12 +17,6 @@
         		Registro creado exitosamente <a href="/usuarios" class="alert-link">Click aqui para quitar mensaje</a>.
         		</div>
 			@endif
-
-			@if($message == 'edit')
-				<div class="alert alert-success" role="alert">
-        		Registro modificado exitosamente <a href="/usuarios" class="alert-link">Click aqui para quitar mensaje</a>.
-        		</div>
-			@endif
 		<div class="row">
 			<div class="col-6">
 				<h1>Usuarios</h1>

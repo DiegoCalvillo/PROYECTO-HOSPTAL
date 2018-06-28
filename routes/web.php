@@ -65,5 +65,6 @@ Route::post('expediente/store', 'ExpedienteMedicoController@store');
 Route::resource('/configuracion', 'ConfiguracionController');
 Route::get('configuracion/{id}/edit', ['as' => 'configuracion/edit', 'uses' => 'ConfiguracionController@edit']);
 Route::put('configuracion/update', ['as' => 'configuracion/update', 'uses' => 'ConfiguracionController@update']);
+Route::get('configuracion/{id}', ['as' => 'configuracion/show', 'uses' => 'ConfiguracionController@show']);
 
 Auth::routes();

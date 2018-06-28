@@ -8,6 +8,7 @@ use Hospital\TipoUsuario as TipoUsuario;
 use Hospital\EstatusUsuario as EstatusUsuario;
 use Hospital\Http\Requests\UsuariosRegistroRequest;
 use Hospital\Http\Requests\UsuariosEditarRequest;
+use Hospital\Http\Requests\CambiarFotoRequest;
 use Auth;
 use Session;
 
@@ -77,7 +78,7 @@ class UsuariosController extends Controller
             $users->password = bcrypt($request->password);
         }
         $users->save();
-        return redirect('/usuarios')->with('message', 'edit');
+        return redirect('/usuarios/'.$users->id)->with('message', 'edit');
     }
 
     public function show($id)
@@ -98,7 +99,7 @@ class UsuariosController extends Controller
         return view('usuarios.usuarios', compact('users'))->with('tipo_usuario', $tipo_usuario)->with('message', 'search');
     }
 
-    public function cambiar_foto(Request $request)
+    public function cambiar_foto(CambiarFotoRequest $request)
     {
         $user_id = Auth::User()->id;
         $users = User::find($request->id);
@@ -107,6 +108,6 @@ class UsuariosController extends Controller
         \Storage::disk('local')->put($foto_perfil, \File::get($file));
         $users->ruta_foto_perfil = "imagenes/fotos_perfil/".$foto_perfil;
         $users->save();
-        return redirect('/usuarios/'.$user_id);   
+        return redirect('/usuarios/'.$user_id)->with('message', 'cambiar_foto');   
     }
 }

@@ -19,6 +19,18 @@
 		<form>
 			{!! Form::hidden('id', $user->id) !!}
 			@include('alerts.errors')
+			@include('alerts.request')
+			<?php $message=Session::get('message') ?>
+				@if($message == 'cambiar_foto')
+					<div class="alert alert-success" role="alert">
+						Foto de perfil actualizada exitosamente
+					</div>
+				@endif
+				@if($message == 'edit')
+					<div class="alert alert-success" role="alert">
+        				Registro modificado exitosamente 
+        			</div>
+				@endif
 			<div class="row">
 				<div class="col-7">
 					<h3>Información General</h3>
@@ -52,6 +64,9 @@
 					@if(Auth::User()->id == $user->id)
 						<input size="20" type="file" class="form-control" name="file" id="file">
 						<button type="submit" class="btn btn-primary">Cambiar foto</button>
+					@endif
+					@if(Auth::User()->tipo_usuario->clave == '01')
+						<center><a class="btn btn-success" href="{{ route('usuarios/edit', ['id' => $user->id]) }}">Editar</a></center>
 					@endif
 				</div>
 			</div>
