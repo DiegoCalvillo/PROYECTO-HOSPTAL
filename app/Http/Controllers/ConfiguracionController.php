@@ -33,4 +33,10 @@ class ConfiguracionController extends Controller
         $config->save();
         return redirect('/configuracion');
     }
+
+    public function show($id)
+    {
+        $config = Configuraciones::find($id);
+        return view('configuracion.configuracion_perfil', compact('config'));
+    }
 }

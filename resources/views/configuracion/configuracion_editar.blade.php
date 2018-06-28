@@ -10,7 +10,7 @@
 				<a href="{{ url('/') }}">Inicio</a>
 			</li>
 			<li class="breadcrumb-item">
-				<a href="{{ url('/configuracion') }}">Configuracion</a>
+				<a href="{{ url('/configuracion') }}">Configuración</a>
 			</li>
 			<li class="breadcrumb-item active">
 				{{ $config->nombre_configuracion }}

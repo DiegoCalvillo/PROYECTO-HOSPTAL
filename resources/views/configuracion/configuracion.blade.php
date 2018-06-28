@@ -14,7 +14,7 @@
 				<h5>Login</h5>
 				<hr>
 				@foreach($config as $config)
-					<a href="{{ route('configuracion/edit', ['id' => $config->id]) }}">{{ $config->nombre_configuracion }}</a>
+					<a href="{{ route('configuracion/show', ['id' => $config->id]) }}">{{ $config->nombre_configuracion }}</a>
 					<br>
 				@endforeach
 			</div>

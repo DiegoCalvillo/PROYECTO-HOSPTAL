@@ -34,7 +34,7 @@
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="User">
           <a class="nav-link" href="">
-            <img class="rounded-circle img-fluid d-block mx-auto" width="50%" src="{!! asset(Auth::User()->ruta_foto_perfil) !!}">
+            <img class="rounded-circle img-fluid d-block mx-auto" width="100px;"  border-radius="150px;" sizes="32x32" src="{!! asset(Auth::User()->ruta_foto_perfil) !!}">
             <span style="color: #ffff" class="nav-link-text"><b>{{ Auth::User()->name }} {{ Auth::User()->ap_paterno }}</b></span>
           </a>
         </li>
@@ -315,6 +315,7 @@
   <!--Configuracion-->
   @yield('content_configuracion')
   @yield('content_configuracion_editar')
+  @yield('content_configuracion_perfil')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
