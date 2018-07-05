@@ -35,7 +35,7 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="User">
           <a class="nav-link" href="">
             <img class="rounded-circle img-fluid d-block mx-auto" width="100px;"  border-radius="150px;" sizes="32x32" src="{!! asset(Auth::User()->ruta_foto_perfil) !!}">
-            <span style="color: #ffff" class="nav-link-text"><b>{{ Auth::User()->name }} {{ Auth::User()->ap_paterno }}</b></span>
+            <center><span style="color: #ffff" class="nav-link-text"><b>{{ Auth::User()->name }} {{ Auth::User()->ap_paterno }}</b></span></center>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">

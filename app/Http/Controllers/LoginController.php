@@ -39,23 +39,30 @@ class LoginController extends Controller
     	}
         else
         {
-            $attempt_user = User::where('username', '=', $request['username'])->get();
-            $user = User::find($attempt_user[0]->id);
-            if($attempt_user[0]->num_intentos == 0) {
-                $user->num_intentos = 1;
-                $user->save();
-                Session::flash('message-error', 'Acceso denegado');
-            } else {
-                $num_intentos = $attempt_user[0]->num_intentos;
-                $user->num_intentos = $num_intentos + 1;
-                if($user->num_intentos >= Configuraciones::numero_intentos()->valor) {
-                    $user->estatus_usuario_id = 0;
-                    $user->save();
-                    Session::flash('message-error', 'Has superado la cantidad intentos permitidos. Cuenta Bloqueada');
-                } else {
+            if(Configuraciones::numero_intentos_activo() == 1)
+            {
+                $attempt_user = User::where('username', '=', $request['username'])->get();
+                $user = User::find($attempt_user[0]->id);
+                if($attempt_user[0]->num_intentos == 0) {
+                    $user->num_intentos = 1;
                     $user->save();
                     Session::flash('message-error', 'Acceso denegado');
+                } else {
+                    $num_intentos = $attempt_user[0]->num_intentos;
+                    $user->num_intentos = $num_intentos + 1;
+                    if($user->num_intentos >= Configuraciones::numero_intentos()->valor) {
+                        $user->estatus_usuario_id = 0;
+                        $user->save();
+                        Session::flash('message-error', 'Has superado la cantidad intentos permitidos. Cuenta Bloqueada');
+                    } else {
+                        $user->save();
+                        Session::flash('message-error', 'Acceso denegado');
+                    }
                 }
+            }
+            else
+            {
+                Session::flash('message-error', 'Acceso denegado');
             }
             return Redirect::to('/login');
         }

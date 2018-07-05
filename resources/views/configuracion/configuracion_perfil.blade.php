@@ -15,6 +15,12 @@
 			</li>
 		</ol>
 		<form>
+			<?php $message=Session::get('message') ?>
+				@if($message == 'edit')
+					<div class="alert alert-success" role="alert">
+        				Registro modificado exitosamente 
+        			</div>	
+				@endif
 			<div class="row">
 				<div class="col-6">
 					<h3>Información General</h3>
@@ -35,7 +41,11 @@
 									<tr>
 										<td>{{ $config->nombre_configuracion }}</td>
 										<td>{{ $config->valor }}</td>
-										<td></td>
+										@if($config->estatus_id == 0)
+											<td><font color="red"><b>{{ $config->estatus->nombre_estatus }}</b></font></td>
+										@else
+											<td><font color="green"><b>{{ $config->estatus->nombre_estatus }}</b></font></td>
+										@endif
 										<td><a class="glyphicon glyphicon-percil" title="Editar" href="{{ route('configuracion/edit', ['id' => $config->id]) }}"><i class="fa fa-fw fa-pencil"></i></a></td>
 									</tr>
 								</tbody>

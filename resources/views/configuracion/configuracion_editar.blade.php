@@ -25,11 +25,20 @@
 					<div class="form-row">
 						<div class="col-md-4">
 							{!! Form::label('full_name', 'Nombre de Configuración') !!}
-							{!! Form::text('nombre_configuracion', null, ['class' => 'form-control']) !!}
+							{!! Form::text('nombre_configuracion', null, ['class' => 'form-control', 'readonly' => 'readonly']) !!}
 						</div>
 						<div class="col-md-4">
 							{!! Form::label('full_name', 'Valor') !!}
 							{!! Form::text('valor', null, ['class' => 'form-control']) !!}
+						</div>
+						<div class="col-md-4">
+							{!! Form::label('full_name', 'Cambiar estatus') !!}
+							<select class="form-control" name="estatus_id">
+								<option value="{{ $config->estatus_id }}">Seleccione</option>
+								<?php foreach($estatus as $estatus){
+									echo '<option value="'.$estatus['id'].'">'.$estatus['nombre_estatus'].'</option>';
+								}?>
+							</select>
 						</div>
 					</div>
 				</div>

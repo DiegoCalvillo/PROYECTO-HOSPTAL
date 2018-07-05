@@ -32,33 +32,6 @@
         			</div>
 				@endif
 			<div class="row">
-				<div class="col-7">
-					<h3>Información General</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-6">
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
-								<tbody>
-									<tr>
-										<th>Nombre de Usuario</th>
-										<td>{{ $user->username }}</td>
-									</tr>
-									<tr>
-										<th>Nombre</th>
-										<td>{{ $user->name }}</td>
-									</tr>
-									<tr>
-										<th>Apellidos</th>
-										<td>{{ $user->ap_paterno }} {{ $user->ap_materno }}</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
 				<div class="col-6">
 					<img class="rounded-circle img-fluid d-block mx-auto" width="40%" src="{!! asset($user->ruta_foto_perfil) !!}">
 					@if(Auth::User()->id == $user->id)
@@ -69,57 +42,79 @@
 						<center><a class="btn btn-success" href="{{ route('usuarios/edit', ['id' => $user->id]) }}">Editar</a></center>
 					@endif
 				</div>
-			</div>
-			<div class="row">
 				<div class="col-6">
-					<h3>Contacto</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-6">
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
-								<tbody>
-									<tr>
-										<th>Correo electrónico</th>
-										<td>{{ $user->email }}</td>
-									</tr>
-								</tbody>
-							</table>
+					<div class="container">
+						<div class="card-header">
+							<b>Información General</b>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="dataTable" width="100%" cellpadding="0">
+									<tbody>
+										<tr>
+											<th>Nombre de Usuario</th>
+											<td>{{ $user->username }}</td>
+										</tr>
+										<tr>
+											<th>Nombre</th>
+											<td>{{ $user->name }}</td>
+										</tr>
+										<tr>
+											<th>Apellidos</th>
+											<td>{{ $user->ap_paterno }} {{ $user->ap_materno }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-6">
-					<h3>Login</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-6">
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
-								<tbody>
-									<tr>
-										<th>Usuario</th>
-										<td>{{ $user->username }}</td>
-									</tr>
-									<tr>
-										<th>Tipo de Usuario</th>
-										<td>{{ $user->tipo_usuario->tipo_usuario }}</td>
-									</tr>
-									<tr>
-										<th>Estatus de Cuenta</th>
-										@if($user->estatus_usuario_id == 0)
-											<td><font color="red"><b>{{ $user->estatus->nombre_estatus }}</b></font></td>
-										@else
-											<td><font color="green"><b>{{ $user->estatus->nombre_estatus }}</b></font></td>
-										@endif
-									</tr>
-								</tbody>
-							</table>
+					<div class="container">
+						<div class="card-header">
+							<b>Contacto</b>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="dataTable" width="100%" cellpadding="0">
+									<tbody>
+										<tr>
+											<th>Correo electrónico</th>
+											<td>{{ $user->email }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="card-header">
+							<b>Login</b>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="dataTable" width="100%" cellpadding="0">
+									<tbody>
+										<tr>
+											<th>Usuario</th>
+											<td>{{ $user->username }}</td>
+										</tr>
+										<tr>
+											<th>Tipo de Usuario</th>
+											<td>{{ $user->tipo_usuario->tipo_usuario }}</td>
+										</tr>
+										<tr>
+											<th>Estatus de Cuenta</th>
+											@if($user->estatus_usuario_id == 0)
+												<td><font color="red"><b>{{ $user->estatus->nombre_estatus }}</b></font></td>
+											@else
+												<td><font color="green"><b>{{ $user->estatus->nombre_estatus }}</b></font></td>
+											@endif
+										</tr>
+										<tr>
+											<td><a href="">Cambiar contraseña</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>

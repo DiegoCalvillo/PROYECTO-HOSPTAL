@@ -13,4 +13,5 @@ class Configuraciones extends Model
     {	
   		return Configuraciones::where('nombre_configuracion', '=', 'Numero de Intentos')->get(['valor'])->first();
     }
+    
 }
