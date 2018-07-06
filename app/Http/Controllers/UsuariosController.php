@@ -9,6 +9,7 @@ use Hospital\EstatusUsuario as EstatusUsuario;
 use Hospital\Http\Requests\UsuariosRegistroRequest;
 use Hospital\Http\Requests\UsuariosEditarRequest;
 use Hospital\Http\Requests\CambiarFotoRequest;
+use Hospital\Http\Requests\CambioContrasenaRequest;
 use Auth;
 use Session;
 
@@ -109,5 +110,24 @@ class UsuariosController extends Controller
         $users->ruta_foto_perfil = "imagenes/fotos_perfil/".$foto_perfil;
         $users->save();
         return redirect('/usuarios/'.$user_id)->with('message', 'cambiar_foto');   
+    }
+
+    public function cambio_contrasena($id)
+    {
+        $users = User::find($id);
+        if(Auth::User()->id != $users->id) {
+            Session::flash('message-error', 'Acción denegada: Queda Prohibido el cambio de contraseña para otros usuarios');
+            return redirect('usuarios/'.Auth::User()->id);
+        } else {
+            return view('usuarios.cambio_contrasena')->with('users', $users);
+        }
+    }
+
+    public function cambio_contrasena_store(CambioContrasenaRequest $request)
+    {
+        $users = User::find($request->id);
+        $users->password = bcrypt($request->password);;
+        $users->save();
+        return redirect('usuarios/'.$users->id)->with('message', 'cambio_contrasena');
     }
 }

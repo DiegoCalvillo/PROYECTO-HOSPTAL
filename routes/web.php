@@ -28,6 +28,8 @@ Route::put('usuarios/update', ['as' => 'usuarios/update', 'uses' => 'UsuariosCon
 Route::get('usuarios/{id}', ['as' => 'usuarios/show', 'uses' => 'UsuariosController@show']);
 Route::post('usuarios/search', ['as' => 'usuarios/search', 'uses' => 'UsuariosController@search']);
 Route::post('usuarios/cambiar_foto', ['as' => 'usuarios/cambiar_foto', 'uses' => 'UsuariosController@cambiar_foto']);
+Route::get('usuarios/{id}/cambio_contrasena', ['as' => 'usuarios/cambio_contrasena', 'uses' => 'UsuariosController@cambio_contrasena']);
+Route::post('usuarios/cambio_contrasena_store', ['as' => 'usuarios/cambio_contrasena_store', 'uses' => 'UsuariosController@cambio_contrasena_store']);
 
 /*Rutas de TipoUsuariosController*/
 Route::resource('/tipo_usuarios', 'TipoUsuariosController');

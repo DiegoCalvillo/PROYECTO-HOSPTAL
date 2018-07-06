@@ -28,8 +28,13 @@
 				@endif
 				@if($message == 'edit')
 					<div class="alert alert-success" role="alert">
-        				Registro modificado exitosamente 
+        				Registro actualizado exitosamente 
         			</div>
+				@endif
+				@if($message == 'cambio_contrasena')
+					<div class="alert alert-success" role="alert">
+						Contraseña ha sido cambiada exitosamente
+					</div>
 				@endif
 			<div class="row">
 				<div class="col-6">
@@ -110,7 +115,9 @@
 											@endif
 										</tr>
 										<tr>
-											<td><a href="">Cambiar contraseña</a></td>
+											@if(Auth::User()->id == $user->id)
+												<td><a href="{{ route('usuarios/cambio_contrasena', ['id' => $user->id]) }}">Cambiar contraseña</a></td>
+											@endif
 										</tr>
 									</tbody>
 								</table>

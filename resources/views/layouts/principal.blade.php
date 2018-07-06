@@ -97,7 +97,7 @@
         @if(Auth::User()->tipo_usuario->clave == "01")
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Configuracion">
             <a class="nav-link" href="{{ url('/configuracion') }}">
-              <i class="fa fa-fw fa-link"></i>
+              <i class="fa fa-fw fa-cog"></i>
               <span class="nav-link-text">Configuración</span>
             </a>
           </li>
@@ -316,6 +316,8 @@
   @yield('content_configuracion')
   @yield('content_configuracion_editar')
   @yield('content_configuracion_perfil')
+  <!--Cambio de contraseña-->
+  @yield('content_cambio_contrasena')
    <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
