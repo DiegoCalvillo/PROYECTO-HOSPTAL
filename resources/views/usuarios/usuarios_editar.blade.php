@@ -84,18 +84,20 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="form-row">
-							<div class="col-md-6">
-								<label for="exampleInputName">Contraseña</label>
-								<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password">
-							</div>
-							<div class="col-md-6">
-								<label for="exampleInputName">Confirmar Contraseña</label>
-								<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password_confirmation">
+					@if(Auth::User()->id != $users->id)
+						<div class="form-group">
+							<div class="form-row">
+								<div class="col-md-6">
+									<label for="exampleInputName">Contraseña</label>
+									<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password">
+								</div>
+								<div class="col-md-6">
+									<label for="exampleInputName">Confirmar Contraseña</label>
+									<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password_confirmation">
+								</div>
 							</div>
 						</div>
-					</div>
+					@endif
 				</div>
 				<button class="btn btn-primary" type="submit">Grabar</button>
 		</div>

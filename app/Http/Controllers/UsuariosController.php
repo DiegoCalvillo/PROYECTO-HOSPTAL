@@ -48,7 +48,7 @@ class UsuariosController extends Controller
     	$users->username = $request->username;
     	$users->password = bcrypt($request->password);
     	$users->save();
-    	return redirect('/usuarios')->with('message', 'store');
+    	return redirect('/usuarios/'.$users->id)->with('message', 'store');
     }
 
     public function edit($id)

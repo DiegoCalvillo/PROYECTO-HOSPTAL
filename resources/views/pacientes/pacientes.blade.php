@@ -33,6 +33,16 @@
 			</div>
 			<div class="card-body">
 				<div class="table-responsive">
+					<div class="row">
+						<div class="col-4">
+							<b>Buscar por nombre: </b> {!! Form::text('nombre_paciente', null, ['class' => 'form-control', 'placeholder' => 'Buscar por nombre']) !!}
+						</div>
+						<div>
+							<br>
+							<button class="btn btn-primary" type="submit">Buscar</button>
+						</div>
+					</div>
+					<br>
 					<table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
 						<thead>
 							<tr>
