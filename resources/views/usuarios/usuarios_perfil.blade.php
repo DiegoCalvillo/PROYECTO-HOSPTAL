@@ -26,6 +26,11 @@
 						Foto de perfil actualizada exitosamente
 					</div>
 				@endif
+				@if($message == 'store')
+					<div class="alert alert-success" role="alert">
+        				Usuario creado exitosamente
+        			</div>
+				@endif
 				@if($message == 'edit')
 					<div class="alert alert-success" role="alert">
         				Registro actualizado exitosamente 

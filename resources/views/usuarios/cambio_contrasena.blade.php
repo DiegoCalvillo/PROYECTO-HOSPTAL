@@ -18,17 +18,22 @@
 		<div class="container">
 			{!! Form::open(['route' => 'usuarios/cambio_contrasena_store', 'method' => 'POST']) !!}
 			{!! Form::hidden('id', $users->id) !!}
+			@include('alerts.errors')
 			<div class="card-header">
 				<b>Cambio de contraseña para:</b> {{ $users->name }} {{ $users->ap_paterno }}
 			</div>
 			<div class="card-body">
 				<div class="form-group">
 					<div class="form-row">
-						<div class="col-md-6">
+						<div class="col-md-4">
+							{!! Form::label('full_name', 'Contraseña Actual') !!}
+							<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="old_password">
+						</div>
+						<div class="col-md-4">
 							{!! Form::label('full_name', 'Nueva contraseña') !!}
 							<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password">
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
 							{!! Form::label('full_name', 'Confirmación de contraseña') !!}
 							<input class="form-control" id="exampleInputName" type="password" aria-describedby="nameHelp" name="password_confirmation">
 						</div>

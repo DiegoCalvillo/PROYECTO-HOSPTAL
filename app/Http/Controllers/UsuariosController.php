@@ -12,6 +12,8 @@ use Hospital\Http\Requests\CambiarFotoRequest;
 use Hospital\Http\Requests\CambioContrasenaRequest;
 use Auth;
 use Session;
+use Hash;
+use Redirect;
 
 class UsuariosController extends Controller
 {
@@ -125,9 +127,15 @@ class UsuariosController extends Controller
 
     public function cambio_contrasena_store(CambioContrasenaRequest $request)
     {
-        $users = User::find($request->id);
-        $users->password = bcrypt($request->password);;
-        $users->save();
-        return redirect('usuarios/'.$users->id)->with('message', 'cambio_contrasena');
+        $user = User::find(Auth::User()->id);
+        if (Hash::check($request->old_password, Auth::User()->password)) {
+            $user->password = bcrypt($request->password);
+            $user->save();
+            return redirect('usuarios/'.$user->id)->with('message', 'cambio_contrasena');
+        }
+        else {
+            Session::flash('message-error', 'La contraseña actual es erronea');
+            return Redirect::to('usuarios/'.$user->id.'/cambio_contrasena');
+        }
     }
 }
