@@ -23,32 +23,37 @@
 			</div>
 			<div class="row">
 				<div class="col-6">
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table table-bordered" id="dataTable" width="100%" cellpadding="0">
-								<tbody>
-									<tr>
-										<th>ID asignado por el sistema</th>
-										<td>{{ $tipo_usuario->id }}</td>
-									</tr>
-									<tr>
-										<th>Tipo de Usuario</th>
-										<td>{{ $tipo_usuario->tipo_usuario }}</td>
-									</tr>
-									<tr>
-										<th>Estatus</th>
-										@if($tipo_usuario->estatus_id == 0)
-											<td><font color="red"><b>{{ $tipo_usuario->estatus->nombre_estatus }}</b></font></td>
-										@else
-											<td>{{ $tipo_usuario->estatus->nombre_estatus }}</td>
-										@endif
-									</tr>
-									<tr>
-										<th>Clave</th>
-										<td>{{ $tipo_usuario->clave }}</td>
-									</tr>
-								</tbody>
-							</table>
+					<div class="container">
+						<div class="card-header">
+							<b>Información General</b>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="dataTable" width="100%" cellpadding="0">
+									<tbody>
+										<tr>
+											<th>ID asignado por el sistema</th>
+											<td>{{ $tipo_usuario->id }}</td>
+										</tr>
+										<tr>
+											<th>Tipo de Usuario</th>
+											<td>{{ $tipo_usuario->tipo_usuario }}</td>
+										</tr>
+										<tr>
+											<th>Estatus</th>
+											@if($tipo_usuario->estatus_id == 0)
+												<td><font color="red"><b>{{ $tipo_usuario->estatus->nombre_estatus }}</b></font></td>
+											@else
+												<td>{{ $tipo_usuario->estatus->nombre_estatus }}</td>
+											@endif
+										</tr>
+										<tr>
+											<th>Clave</th>
+											<td>{{ $tipo_usuario->clave }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
