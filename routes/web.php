@@ -58,6 +58,7 @@ Route::post('pacientes/store', 'PacientesController@store');
 Route::get('pacientes/{id}/edit', ['as' => 'pacientes/edit', 'uses' => 'PacientesController@edit']);
 Route::put('pacientes/update', ['as' => 'pacientes/update', 'uses' => 'PacientesController@update']);
 Route::get('pacientes/{id}', ['as' => 'pacientes/show', 'uses' => 'PacientesController@show']);
+Route::post('pacientes/search', ['as' => 'pacientes/search', 'uses' => 'PacientesController@search']);
 
 /*Rutas de ExpedienteMedicoController*/
 Route::get('expediente/{id}/create', ['as' => 'expediente/create', 'uses' => 'ExpedienteMedicoController@create']);

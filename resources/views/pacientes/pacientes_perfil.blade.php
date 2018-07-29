@@ -131,6 +131,8 @@
 											<tr>
 												<th>Estatura</th>
 												<td>{{ $expediente->estatura }}</td>
+											</tr>
+											<tr>
 												<th>Peso</th>
 												<td>{{ $expediente->peso }}</td>
 											</tr>

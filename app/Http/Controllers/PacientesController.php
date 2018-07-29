@@ -97,4 +97,10 @@ class PacientesController extends Controller
         $pacientes->save();
         return redirect('/pacientes')->with('message', 'edit');
     }
+
+    public function search(Request $request)
+    {
+        $paciente = Pacientes::where('nombre_paciente', 'like', '%'.$request-> nombre_paciente.'%')->get();
+        return view('pacientes.pacientes', compact('paciente'));
+    }
 }

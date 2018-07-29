@@ -2,6 +2,7 @@
 
 @section('content_pacientes')
 <div class="content-wrapper">
+	{!! Form::open(['route' => 'pacientes/search', 'method' => 'POST']) !!}
 	<?php $message = Session::get('message') ?>
 	@if($message == 'store')
 		<div class="alert alert-success" role="alert">
@@ -65,6 +66,11 @@
 							@endforeach
 						</tbody>
 					</table>
+					@if($paciente->count() == 0)
+						<div class="alert alert-danger" role="alert">
+							No se han encontrado resultados
+						</div>
+					@endif
 				</div>
 			</div>
 		</div>
